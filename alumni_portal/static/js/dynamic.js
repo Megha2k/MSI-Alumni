@@ -1,0 +1,1 @@
+alert("This is to show how JS file is attached.");

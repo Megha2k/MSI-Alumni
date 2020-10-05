@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends "alumni_app/base.html" %}
+{% load static %}
+{% block base_body_block %}
+<!-- everything in this block will inherit from base.html -->
+
+	<h1>Hello world!</h1>
+	<img src="{% static 'images/pic.jpg' %}" alt="This is to give an idea of how to insert an image.">
+
+{% endblock %}
