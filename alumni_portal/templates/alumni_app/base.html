@@ -24,11 +24,11 @@
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-	
+
 	<div class="clgname-container">
 		<div class="inner-clgname">
 			<div class="img-container">
-				<img src="msi.jpg"width="120" height="120">
+				<img src= "{% static 'images/msi.jpg' %}" width="120" height="120">
 			</div>
 			<div class="clgname">
 				<h1>Maharaja Surajmal Institute</h1>
@@ -43,18 +43,18 @@
 
 				<!-- Code for hamburger button and its function-->
 				<nav role="navigation">
-					
+
 					  <div id="menuToggle">
 					    <!--
 					    A fake / hidden checkbox is used as click reciever,
 					    so you can use the :checked selector on it.
 					    -->
 					    <input type="checkbox" />
-					   
+
 					    <span></span>
 					    <span></span>
 					    <span></span>
-					  
+
 					    <ul id="menu">
 					      <a href="#"><li>Home</li></a>
 					      <a href="#"><li>About</li></a>
@@ -73,7 +73,7 @@
 			</ul>
 		</div>
 	</div>
-	
+
 	<div class="container">
 		{% block base_body_block %}
 		<!-- Everything outside of this block will be inherited in all files that extend base.html -->
