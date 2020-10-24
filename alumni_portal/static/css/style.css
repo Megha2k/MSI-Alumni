@@ -1,3 +1,360 @@
-h1{
-	color: red;
+*{
+	margin:0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+.clgname-container
+{
+	width: 100%;
+	height: 130px;
+	display: block;
+	background: #B22222;
+	padding-top: 10px;
+}
+
+.inner-clgname 
+{
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+	display: block;
+	/*background: #191970*/
+}
+
+.img-container
+{
+	height: 100%;
+	float: left;
+	display: table;
+}
+
+.clgname
+{
+	height: 100%;
+	display: table;
+	padding-left: 5px;
+}
+
+.clgname h1
+{
+	color: white;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 45px;
+	font-weight: 200;
+}
+
+.navheader
+{
+	width: 100%;
+	height: 80px;
+	display: block;
+	background: #191970;
+
+}
+
+.innerHeader 
+{
+	width: 90%;
+	height: 100%;
+	margin-left: 20px;
+	display: block;
+	/*background: #191970*/
+}
+
+.logo-container
+{
+	height: 100%;
+	float: left;
+	display: table;
+}
+
+.logo-container h1
+{
+	color: white;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 32px;
+	font-weight: 200;
+	padding-left: 5px;
+}
+.logo-container h1 span
+{
+	font-weight: 800;
+}
+.logo-container .icon{
+	color: white;
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 25px;
+}
+
+.login
+{
+	float: right;
+	height: 100%;
+}
+
+.login a
+{
+	display: table;
+	float: right;
+	height: 100%;
+}
+
+.login a li
+{
+	display: table-cell;
+	vertical-align: middle;
+	height: 100%;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 25px;
+	font-weight: 300;
+	color: white;
+	padding-left: 150px;
+}
+
+.login a li:hover
+{
+	color: #B22222;
+}
+
+/* CSS code for hamburger */
+#menuToggle
+{
+  display: table;
+  vertical-align: middle;
+  position: relative;
+  margin-top: 30px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: #191970;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;  /*to hide the hamburger icon*/
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: white;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0; 
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 150px;
+  margin: 23px 0 0 -50px;
+  padding: 50px;
+  background: #B22222;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And to slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+
+
+@media only screen and (max-width: 800px) 
+{
+	.clgname-container
+	{
+		width: 100%;
+	}
+
+	.inner-clgname
+	{
+		width: 100%;
+		height: auto;
+	}
+
+	.clgname h1
+	{
+		padding-top: 30px;
+		font-weight: 40%;
+		font-size: 40px;
+	}
+
+	.img-container img
+	{
+		width: 90px;
+		height: 90px;
+		padding-left: 30px;
+		padding-top: 20px;
+	}
+
+	.navheader {width: 100%;}
+
+	.navheader{
+		width: 100%;
+	}
+
+	.login a li
+	{
+		padding-left: 20%;
+	}
+	.logo-container h1
+	{
+		font-size: 25px;
+	}
+
+	.logo-container h1 span
+	{
+		font-size: 25px;
+	}
+
+}
+
+
+@media only screen and (max-width: 450px) 
+{
+	.clgname-container
+	{
+		width: 100%;
+	}
+	
+	.inner-clgname
+	{
+		width: 100%;
+		height: auto;
+	}
+
+	.clgname h1
+	{
+		font-size: 25px;
+	}
+
+	.logo-container h1
+	{
+		font-size: 18px;
+	}
+	.logo-container h1 span
+	{
+		font-size: 18px;
+	}
+
+	.login a li
+	{
+		color: white;
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 300px) 
+{
+	.clgname h1
+	{
+		padding-left: 9px;
+	}
+	.logo-container h1
+	{
+		font-size: 15px;
+	}
+	.logo-container h1 span
+	{
+		font-size: 15px;
+	}
+
+	.login a li
+	{
+		font-size: 15px;
+	}
 }
