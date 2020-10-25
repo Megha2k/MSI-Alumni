@@ -1,0 +1,21 @@
+/* ----------------Shubhaam Rathore CSS--------------- */
+
+.innercarousel{
+    padding: 15px 150px 15px 150px;
+    
+   
+}
+
+@media only screen and (max-width: 640px){
+    .innercarousel{
+        padding: 5px 10px 5px 10px;
+    }
+}
+
+.gradient1{
+    padding: 5px 10px 5px 10px;
+    background-color: #0055ff;
+    
+    
+}
+/*-----------Shubham rathore CSS ENDS*/
