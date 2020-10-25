@@ -11,8 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 	<script type="text/javascript" src="{% static 'js/dynamic.js' %}"></script>
 
-
-	<link rel="stylesheet" type="text/css" href="/style.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--link for font-->
@@ -86,7 +84,7 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container" style=" margin-top:5px; margin-bottom:5px; margin-left:3%; border:2px black solid">
 		{% block base_body_block %}
 		<!-- Everything outside of this block will be inherited in all files that extend base.html -->
 		{% endblock %}
@@ -95,23 +93,23 @@
 
     <!-- ---------------------------------------------------------Now adding a FOOTER--------------------------------------------------------------- -->
     <!-- -------------------------------------------------------------Footer-------------------------------------------------------------------------- -->
-	<footer style="padding:0px" class="foot_fixed">
+	<footer class="foot_fixed">
 
 		<div class="wrapper row">
-		   <div class="col-md-6 col-sm-6">
-				<div class="row-md-6 row-sm-6" style="margin-left: 50px;"><!-- --------------------College Name section----------------------------- -->
+		   <div>
+				<div style="margin-left: 50px;"><!-- --------------------College Name section----------------------------- -->
 					<h2>Maharaja Surajmal Institute</h2>
 					<h5>Since 1999</h5>
 					<h5>C-4, Janakpuri, New Delhi-58</h5>
 				</div>
-				<div class="row-md-6 row-sm-6" style=" margin-left: 50px; margin-top: 30px; margin-bottom: 30px;"><!-- ------Social media icons-------- -->
+				<div style=" margin-left: 50px; margin-top: 30px; margin-bottom: 30px;"><!-- ------Social media icons-------- -->
 					<i href="#" class="fa fa-facebook"></i>
 					<i href="#" class="fa fa-twitter"></i>
 					<i href="#" class="fa fa-linkedin"></i>
 					<i href="#" class="fa fa-youtube"></i>
 				</div>
 			</div>
-			<div class="col-md-6 col-sm-6"><!-- --------------------------------------------------slide show------------------------------------------ -->
+			<div style="width:70%; margin-left:auto; margin-right:auto;"><!-- --------------------------------------------------slide show------------------------------------------ -->
 
 					   <div class="carousel slide" id="myslider" data-ride="carousel">
 						   <div class="carousel-inner"><!-- ------------------images stored here------------------------------------------------------- -->
@@ -156,8 +154,8 @@
 
 		</div>
 
-		<div class="container-fluid row" style="background-color: #0044cc;" ><!-- ---------------------------------------Copyright panel--------------- -->
-			<h6>Copyright © 2020 Jhunjhunwala Institute</h6>
+		<div class="container-fluid row" style="background-color: #23427f; width=100%; padding-left:3%; margin-left:0%; margin-top:3%;" ><!-- ---------------------------------------Copyright panel--------------- -->
+			<h6>Copyright © 2020 Maharaja Surajmal Institute</h6>
 		</div>
 
 	</footer>

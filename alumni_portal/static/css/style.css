@@ -54,7 +54,7 @@
 	width: 100%;
 	height: 80px;
 	display: block;
-	background: #191970;
+	background: #1b3058;
 
 }
 
@@ -224,7 +224,7 @@
 #menu
 {
   position: absolute;
-  width: 150px;
+  width: 200px;
   margin: 23px 0 0 -50px;
   padding: 50px;
   background: #B22222;
@@ -360,14 +360,12 @@
 	}
 }
 
-
-
 /* ---------------------------SHUBHAM RATHORE CSS --------------------- */
 /* ----------------This section belongs to hubham rathore-------------- */
 
 .foot_fixed{
      padding: 5px ;
-     background-color: #003cb3;
+     background-color: #1b3058;
      color:white;
      bottom: 0px;
 	 max-width: 100%;
@@ -382,7 +380,7 @@ overflow-x: hidden;
 	font-size: 30px;
     width: 60px;
     text-align: center;
-
+    text-decoration: none;
     margin: 5px 2px;
 	border-radius: 50%;
 }
@@ -393,7 +391,7 @@ overflow-x: hidden;
 
 .fa-facebook {
     background: #3B5998;
-
+    color: #ffffff;
 
 }
 
