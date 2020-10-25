@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="{% static 'js/dynamic.js' %}"></script>
 
 
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="/style.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--link for font-->
@@ -23,12 +23,12 @@
 
 	<!-- try----------------------------------------------------------------------------------------------------- -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
-        <!--jQuery library--> 
+        <!--jQuery library-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-        <!--Latest compiled and minified JavaScript--> 
+        <!--Latest compiled and minified JavaScript-->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- Try ends here-------------------------------------------------------------------------------------------- -->
 
@@ -40,7 +40,7 @@
 	<div class="clgname-container">
 		<div class="inner-clgname">
 			<div class="img-container">
-				<img src= "{% static 'images/msi.jpg' %}" width="120" height="120">
+				<img src= "{% static 'images/msi_logo.png' %}" width="120" height="120">
 			</div>
 			<div class="clgname">
 				<h1>Maharaja Surajmal Institute</h1>
@@ -92,7 +92,7 @@
 		{% endblock %}
 	</div>
 
-	
+
     <!-- ---------------------------------------------------------Now adding a FOOTER--------------------------------------------------------------- -->
     <!-- -------------------------------------------------------------Footer-------------------------------------------------------------------------- -->
 	<footer style="padding:0px" class="foot_fixed">
@@ -105,41 +105,41 @@
 					<h5>C-4, Janakpuri, New Delhi-58</h5>
 				</div>
 				<div class="row-md-6 row-sm-6" style=" margin-left: 50px; margin-top: 30px; margin-bottom: 30px;"><!-- ------Social media icons-------- -->
-					<a href="#" class="fa fa-facebook"></a>
-					<a href="#" class="fa fa-twitter"></a>
-					<a href="#" class="fa fa-linkedin"></a>
-					<a href="#" class="fa fa-youtube"></a> 
+					<i href="#" class="fa fa-facebook"></i>
+					<i href="#" class="fa fa-twitter"></i>
+					<i href="#" class="fa fa-linkedin"></i>
+					<i href="#" class="fa fa-youtube"></i>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-6"><!-- --------------------------------------------------slide show------------------------------------------ -->
-				   
+
 					   <div class="carousel slide" id="myslider" data-ride="carousel">
 						   <div class="carousel-inner"><!-- ------------------images stored here------------------------------------------------------- -->
 							   <div class="item active"><!-- ----------------------------------------------------------------first image--------------- -->
 								   <img src="{% static 'images/1.jpg' %}" alt="1.jpg" style="width:100%;height:250px;">
 								   <div class="carousel-caption">
 									   <h3 style="color:red;">Image one</h3>
-								   </div>            
+								   </div>
 							   </div>
 							   <div class="item"><!-- -------------------------------------------------------second image------------------------------ -->
 								   <img src="{% static 'images/2.jpg' %}" alt="1.jpg" style="width:100%;height:250px; ">
 								   <div class="carousel-caption">
 									   <h3 style="color:red;">Image two</h3>
-								   </div>             
+								   </div>
 							   </div>
 							   <div class="item"><!-- ---------------------------------------------------------third image-------------------------- -->
 								   <img src="{% static 'images/3.jpg' %}" alt="1.jpg" style="width:100%;height:250px;">
 								   <div class="carousel-caption">
 									   <h3 style="color:red;">Image three</h3>
-								   </div>             
+								   </div>
 							   </div>
-			   
+
 						   </div>
 						   <ol class="carousel-indicators" style="color:red;"><!-- -------------------------------indicators------------------------ -->
 							   <li data-target="#myslider" data-slide-to="0" class="active"></li>
 							   <li data-target="#myslider" data-slide-to="1" ></li>
 							   <li data-target="#myslider" data-slide-to="2" ></li>
-			   
+
 						   </ol>
 						   <a class="carousel-control-prev" href="#myslider" role="button" data-slide="prev">
 							   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -149,20 +149,20 @@
 							   <span class="carousel-control-next-icon" aria-hidden="true"></span>
 							   <span class="sr-only">Next</span>
 							 </a>
-			   
-					   </div>   
-					
+
+					   </div>
+
 			</div>
 
 		</div>
-		
+
 		<div class="container-fluid row" style="background-color: #0044cc;" ><!-- ---------------------------------------Copyright panel--------------- -->
-			<center >Copyright © 2020 Jhunjhunwala Institute</center>
+			<h6>Copyright © 2020 Jhunjhunwala Institute</h6>
 		</div>
-	   
+
 	</footer>
-		   
-	
-	
+
+
+
 </body>
 </html>
