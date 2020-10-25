@@ -79,5 +79,78 @@
 		<!-- Everything outside of this block will be inherited in all files that extend base.html -->
 		{% endblock %}
 	</div>
+
+	
+    <!-- ---------------------------------------------------------Now adding a FOOTER--------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------Footer-------------------------------------------------------------------------- -->
+	<footer style="padding:0px" class="foot_fixed">
+
+		<div class="wrapper row">
+		   <div class="col-md-6 col-sm-6">
+				<div class="row-md-6 row-sm-6" style="margin-left: 50px;"><!-- --------------------College Name section----------------------------- -->
+					<h2>Maharaja Surajmal Institute</h2>
+					<h5>Since 1999</h5>
+					<h5>C-4, Janakpuri, New Delhi-58</h5>
+				</div>
+				<div class="row-md-6 row-sm-6" style=" margin-left: 50px; margin-top: 30px; margin-bottom: 30px;"><!-- ------Social media icons-------- -->
+					<a href="#" class="fa fa-facebook"></a>
+					<a href="#" class="fa fa-twitter"></a>
+					<a href="#" class="fa fa-linkedin"></a>
+					<a href="#" class="fa fa-youtube"></a> 
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6"><!-- --------------------------------------------------slide show------------------------------------------ -->
+				   
+					   <div class="carousel slide" id="myslider" data-ride="carousel">
+						   <div class="carousel-inner"><!-- ------------------images stored here------------------------------------------------------- -->
+							   <div class="item active"><!-- ----------------------------------------------------------------first image--------------- -->
+								   <img src="{% static 'images/1.jpg' %}" alt="1.jpg" style="width:100%;height:250px;">
+								   <div class="carousel-caption">
+									   <h3 style="color:red;">Image one</h3>
+								   </div>            
+							   </div>
+							   <div class="item"><!-- -------------------------------------------------------second image------------------------------ -->
+								   <img src="{% static 'images/2.jpg' %}" alt="1.jpg" style="width:100%;height:250px; ">
+								   <div class="carousel-caption">
+									   <h3 style="color:red;">Image two</h3>
+								   </div>             
+							   </div>
+							   <div class="item"><!-- ---------------------------------------------------------third image-------------------------- -->
+								   <img src="{% static 'images/3.jpg' %}" alt="1.jpg" style="width:100%;height:250px;">
+								   <div class="carousel-caption">
+									   <h3 style="color:red;">Image three</h3>
+								   </div>             
+							   </div>
+			   
+						   </div>
+						   <ol class="carousel-indicators" style="color:red;"><!-- -------------------------------indicators------------------------ -->
+							   <li data-target="#myslider" data-slide-to="0" class="active"></li>
+							   <li data-target="#myslider" data-slide-to="1" ></li>
+							   <li data-target="#myslider" data-slide-to="2" ></li>
+			   
+						   </ol>
+						   <a class="carousel-control-prev" href="#myslider" role="button" data-slide="prev">
+							   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							   <span class="sr-only">Previous</span>
+						   </a>
+						   <a class="carousel-control-next" href="#myslider" role="button" data-slide="next">
+							   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+							   <span class="sr-only">Next</span>
+							 </a>
+			   
+					   </div>   
+					
+			</div>
+
+		</div>
+		
+		<div class="container-fluid row" style="background-color: #0044cc;" ><!-- ---------------------------------------Copyright panel--------------- -->
+			<center >Copyright © 2020 Jhunjhunwala Institute</center>
+		</div>
+	   
+	</footer>
+		   
+	
+	
 </body>
 </html>

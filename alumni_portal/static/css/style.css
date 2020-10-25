@@ -358,3 +358,59 @@
 		font-size: 15px;
 	}
 }
+
+
+
+/* ---------------------------SHUBHAM RATHORE CSS --------------------- */
+/* ----------------This section belongs to hubham rathore-------------- */
+
+.foot_fixed{
+     padding: 5px ;
+     background-color: #003cb3;
+     color:white;
+     bottom: 0px;
+	 max-width: 100%;
+overflow-x: hidden;
+     width: 100%;
+     position: relative;
+  
+}
+
+ .fa {
+    padding: 16px;
+	
+    font-size: 20px;
+    width: 30px;
+    text-decoration: ;
+    margin: 10px 10px;
+	
+    border-radius: 40%;
+}
+        
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+	
+}
+
+.fa-twitter {
+    background: #55ACEE;
+	color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+	color: white;
+}
+        
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+/* ------------------Shubham rathore section --------------------------- */
+/* ------------------------ENDs HERE------------------------------------ */
