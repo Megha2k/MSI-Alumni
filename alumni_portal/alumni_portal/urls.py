@@ -18,6 +18,8 @@ from django.urls import path
 from django.conf.urls import url
 from django.conf.urls import include
 from alumni_app import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +29,5 @@ urlpatterns = [
     path('achievements/', views.achievements, name='achievements'),
     path('notice/', views.notice, name='notice'),
     path('msi_admin/', views.msi_admin, name='msi_admin'),
-]
+
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
