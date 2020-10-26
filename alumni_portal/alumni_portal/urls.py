@@ -21,6 +21,10 @@ from alumni_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', views.index, name='index'),
     url(r'^alumni_app/', include('alumni_app.urls')),
+    url(r'^$', views.index, name='index'),
+    path('bca_placement/', views.bca_placement, name='bca_placement'),
+    path('achievements/', views.achievements, name='achievements'),
+    path('notice/', views.notice, name='notice'),
+    path('msi_admin/', views.msi_admin, name='msi_admin'),
 ]
