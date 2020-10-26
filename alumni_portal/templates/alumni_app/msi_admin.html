@@ -4,12 +4,25 @@
 {% block base_body_block %}
 <!-- everything in this block will inherit from base.html -->
 
-	<div class="container">
-		<form method="post" enctype="multipart/form-data" autocomplete="off">
-			{{notice_form.as_p}}
-			{% csrf_token %}
-			<input type="submit" class="btn btn-primary" name="notice_form" value="submit">
-		</form>		
+<link rel="stylesheet" type="text/css" href="{% static 'css/msi_admin.css' %}">
+
+	<center>
+
+	<div class="card">
+		<div class="form-group">
+			<div class="card-header"><h3>Notice</h3></div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">
+					<form method="post" enctype="multipart/form-data" autocomplete="off">
+						{{notice_form.as_p}}
+						{% csrf_token %}
+						<div class="submit_btn"><input type="submit" class="btn btn-primary" name="notice_form" value="submit"></div>
+					</form>
+				</li>
+			</ul>
+		</div>
 	</div>
+
+	</center>
 
 {% endblock %}

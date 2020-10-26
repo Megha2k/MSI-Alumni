@@ -1,6 +1,7 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
 from alumni_app.forms import notice_form
+from alumni_app.models import notice_model
 
 def index(request):
 	return render(request, 'alumni_app/index.html')
@@ -12,7 +13,9 @@ def achievements(request):
 	return render(request, 'alumni_app/achievements.html')
 
 def notice(request):
-	return render(request, 'alumni_app/notice.html')
+	notice_obj = notice_model.objects.all()
+	notice_list = {'notice_obj':notice_obj}
+	return render(request, 'alumni_app/notice.html',notice_list)
 
 def msi_admin(request):
 

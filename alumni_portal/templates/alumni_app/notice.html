@@ -11,10 +11,10 @@
 	<center>
 	<div class="card">
   		<ul class="list-group list-group-flush">
-    		<li class="list-group-item">link1</li>
-   			<li class="list-group-item">link2</li>
-   			<li class="list-group-item">link3</li>
-  			</ul>
+   			{% for i in notice_obj %}
+   				<li class="list-group-item"><a href="{{ i.file.url }}" download>{{ i.name }}</a></li>
+   			{% endfor %}
+  		</ul>
 	</div>
 	</center>
 
