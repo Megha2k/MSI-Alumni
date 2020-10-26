@@ -1,4 +1,4 @@
-/* When the user clicks on the button, 
+/* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 
 /* Script for courses dropdown */
@@ -12,19 +12,6 @@ window.onclick = function(e) {
   var myDropdown = document.getElementById("myDropdown");
     if (myDropdown.classList.contains('show')) {
       myDropdown.classList.remove('show');
-    }
-  }
-}
-
-/* Script for placement dropdown */
-function myPlacement() {
-  document.getElementById("myPlacement").classList.toggle("p-show");
-}
-window.onclick = function(e) {
-  if (!e.target.matches('.drpbtn-placement')) {
-  var placement = document.getElementById("myPlacement");
-    if (placement.classList.contains('p-show')) {
-      placement.classList.remove('p-show');
     }
   }
 }
