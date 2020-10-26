@@ -29,8 +29,7 @@
         <!--Latest compiled and minified JavaScript-->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- Try ends here-------------------------------------------------------------------------------------------- -->
-
-
+	
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
@@ -68,10 +67,27 @@
 					    <ul id="menu">
 					      <a href="#"><li>Home</li></a>
 					      <a href="#"><li>About</li></a>
-					      <a href="#"><li >Courses</li></a>
+					      <div class="dropdown">
+							  <button class="dropbtn" onclick="myFunction()">Courses &nbsp;<i class="fa fa-caret-down"></i>
+							  </button>
+							  <div class="dropdown-content" id="myDropdown">
+							    <a href="#">BCA</a>
+							    <a href="#">BBA</a>
+							    <a href="#">B.Com</a>
+							    <a href="#">B.Ed</a>
+							  </div>
+							</div>
 					      <a href="#"><li>Events</li></a>
 					      <a href="{% url 'notice' %}"><li>Notices</li></a>
-					      <a href="#"><li>Placement</li></a>
+					      <div class="drpdwn-placement">
+							  <button class="drpbtn-placement" onclick="myPlacement()">Placement &nbsp;<i class="fa fa-caret-down"></i>
+							  </button>
+							  <div class="placement-content" id="myPlacement">
+							    <a href="#">BCA</a>
+							    <a href="#">BBA</a>
+							    <a href="#">B.Com</a>
+							    <a href="#">B.Ed</a>
+							  </div></div>
 					    </ul>
 					  </div>
 					</nav>
