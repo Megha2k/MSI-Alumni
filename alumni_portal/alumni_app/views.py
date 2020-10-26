@@ -16,7 +16,12 @@ def notice(request):
 def msi_admin(request):
 	form_notice = notice_form(request.POST)
 	if 'notice_form' in request.POST:
-		form = notice_form(request.POST)
+		form = notice_form(request.POST,request.FILES)
+		if "file" in request.FILES:
+			file = request.FILES["file"]
+		else:
+			print("no file")
+
 		if form.is_valid():
 			form.save(commit=True)
 			print('form submitted successfully!')

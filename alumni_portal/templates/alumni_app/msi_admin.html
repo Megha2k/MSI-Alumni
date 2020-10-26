@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "alumni_app/base.html" %}
+{% load static %}
+{% block base_body_block %}
+<!-- everything in this block will inherit from base.html -->
+
+	<div class="container">
+		<form method="post" enctype="multipart/form-data" autocomplete="off">
+			{{notice_form.as_p}}
+			{% csrf_token %}
+			<input type="submit" class="btn btn-primary" name="notice_form" value="submit">
+		</form>		
+	</div>
+
+{% endblock %}

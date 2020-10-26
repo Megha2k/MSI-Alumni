@@ -1,3 +1,7 @@
 from django.db import models
+from datetime import datetime
 
-# Create your models here.
+class notice(models.Model):
+	name = models.CharField(max_length=25)
+	date = models.DateTimeField(default=datetime.now)
+	file = models.FileField(default="")
