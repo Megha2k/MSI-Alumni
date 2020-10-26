@@ -1,5 +1,6 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
+from alumni_app.forms import notice_form
 
 def index(request):
 	return render(request, 'alumni_app/index.html')

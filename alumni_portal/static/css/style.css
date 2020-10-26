@@ -224,7 +224,7 @@
 #menu
 {
   position: absolute;
-  width: 200px;
+  width: auto;
   margin: 23px 0 0 -50px;
   padding: 50px;
   background: #B22222;
@@ -258,7 +258,7 @@
 
 .dropdown .dropbtn {
   cursor: pointer;
-  font-size: 22px;  
+  font-size: 22px;
   border: none;
   outline: none;
   color: white;
@@ -302,7 +302,7 @@
 
 .drpdwn-placement .drpbtn-placement {
   cursor: pointer;
-  font-size: 22px;  
+  font-size: 22px;
   border: none;
   outline: none;
   color: white;
