@@ -1,11 +1,37 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from alumni_app.forms import notice_form
 from alumni_app.models import notice_model
-
+from django.contrib.auth.models import User
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
 def index(request):
-	return render(request, 'alumni_app/index.html')
+	if request.method == "POST":
 
+		if 'login_form' in request.POST:
+
+			username = request.POST["username"]
+			password = request.POST["password"]
+
+			user = authenticate(username=username, password=password)
+
+			if user and user.is_staff:
+				login(request,user)
+				return HttpResponseRedirect("/notice")
+
+			else:
+				return render(request,'index.html',{"status":"Invalid username or password!"})
+	else:
+
+		return render(request, 'alumni_app/index.html')
+
+
+@login_required
+def user_logout(request):
+	logout(request)
+	return HttpResponseRedirect("/homepage")
+	
 def bca_placement(request):
 	return render(request, 'alumni_app/bca_placement.html')
 

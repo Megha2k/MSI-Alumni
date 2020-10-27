@@ -71,7 +71,7 @@
 							  <button class="dropbtn" onclick="myFunction()">Placement &nbsp;<i class="fa fa-caret-down"></i>
 							  </button>
 							  <div class="dropdown-content" id="myDropdown">
-							    <a href={% url 'bca_placement' %}>BCA</a>
+							    <a href="{% url 'bca_placement' %}">BCA</a>
 							    <a href="#">BBA</a>
 							    <a href="#">B.Com</a>
 							    <a href="#">B.Ed</a>
@@ -85,9 +85,17 @@
 					</nav>
 			<h1> MSI <span>Alumni assocation</span></h1>
 			</div>
-
+			
 			<ul class="login">
-				<a href="#"><li>Login</li></a>
+				{% if user.is_authenticated %}
+				<li class="nav-item">
+				  <a class= "nav-link" href="{% url 'user_logout' %}"><i class = "fas fa-sign-out-alt"></i>Sign out</a>
+				</li>
+				{% else %}
+				<li class="nav-item">
+				  <a class= "nav-link" href="{% url 'homepage' %} #loginID" ><i class = "fas fa-sign-in-alt"></i>Sign in</a>
+				</li>
+				{% endif %}
 			</ul>
 		</div>
 	</div>
