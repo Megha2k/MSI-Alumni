@@ -5,13 +5,16 @@
 <!-- everything in this block will inherit from base.html -->
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/msi_admin.css' %}">
+<script type="text/javascript" src="{% static 'js/msi_admin.js' %}"></script>
 
 	<center>
 
 	<div class="card">
 		<div class="form-group">
-			<div class="card-header"><h3>Notice</h3></div>
-			<ul class="list-group list-group-flush">
+			<div class="card-header"><h3>Notice</h3>
+				<button id="notice_show_hide_btn" onclick="notice_show_hide()">+</button>
+			</div>
+			<ul class="list-group list-group-flush" id="notice_show_hide" style="display:none;">
 				<li class="list-group-item">
 					<form method="post" enctype="multipart/form-data" autocomplete="off">
 						{{notice_form.as_p}}
