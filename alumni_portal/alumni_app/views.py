@@ -18,7 +18,7 @@ def index(request):
 
 			if user and user.is_staff:
 				login(request,user)
-				return HttpResponseRedirect("/notice")
+				return HttpResponseRedirect("/msi_admin")
 
 			else:
 				return render(request,'index.html',{"status":"Invalid username or password!"})
@@ -31,7 +31,7 @@ def index(request):
 def user_logout(request):
 	logout(request)
 	return HttpResponseRedirect("/homepage")
-	
+
 def bca_placement(request):
 	return render(request, 'alumni_app/bca_placement.html')
 
@@ -43,10 +43,11 @@ def notice(request):
 	notice_list = {'notice_obj':notice_obj}
 	return render(request, 'alumni_app/notice.html',notice_list)
 
+@login_required
 def msi_admin(request):
 
 	form_notice = notice_form(request.POST)
-	
+
 	if 'notice_form' in request.POST:
 		form = notice_form(request.POST,request.FILES)
 		if form.is_valid():
