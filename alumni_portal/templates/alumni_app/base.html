@@ -85,15 +85,15 @@
 					</nav>
 			<h1> MSI <span>Alumni assocation</span></h1>
 			</div>
-			
+
 			<ul class="login">
 				{% if user.is_authenticated %}
 				<li class="nav-item">
-				  <a class= "nav-link" href="{% url 'user_logout' %}"><i class = "fas fa-sign-out-alt"></i>Sign out</a>
+				  <h3><a class= "nav-link" href="{% url 'user_logout' %}"><i class = "fas fa-sign-out-alt"></i>Sign out</a></h3>
 				</li>
 				{% else %}
 				<li class="nav-item">
-				  <a class= "nav-link" href="{% url 'homepage' %} #loginID" ><i class = "fas fa-sign-in-alt"></i>Sign in</a>
+				  <h3><a class= "nav-link" href="{% url 'homepage' %} #loginID" ><i class = "fas fa-sign-in-alt"></i>Sign in</a></h3>
 				</li>
 				{% endif %}
 			</ul>
@@ -110,41 +110,49 @@
     <!-- ---------------------------------------------------------Now adding a FOOTER--------------------------------------------------------------- -->
     <!-- -------------------------------------------------------------Footer-------------------------------------------------------------------------- -->
 	<footer class="foot_fixed">
+	    <li><i class="fa fa-facebook-official" aria-hidden="true"></i></li>
 
 		<div class="wrapper row" style="display:block;">
 		   <div>
-				<div style="margin-left: 50px;"><!-- --------------------College Name section----------------------------- -->
-					<h2>Maharaja Surajmal Institute</h2>
+				<div style="margin-left: 3%;"><!-- --------------------College Name section----------------------------- -->
+					<h2 style="margin-top:0%">Maharaja Surajmal Institute</h2>
 					<h5>Since 1999</h5>
 					<h5>C-4, Janakpuri, New Delhi-58</h5>
 				</div>
-				<div style=" margin-left: 50px; margin-top: 30px; margin-bottom: 30px;"><!-- ------Social media icons-------- -->
+				<div style=" margin-left: 3%; margin-top: 1%; margin-bottom: 2%;"><!-- ------Social media icons-------- -->
 					<i href="#" class="fa fa-facebook"></i>
 					<i href="#" class="fa fa-twitter"></i>
 					<i href="#" class="fa fa-linkedin"></i>
 					<i href="#" class="fa fa-youtube"></i>
 				</div>
 			</div>
-			<div style="width:40%; margin-left:auto; margin-right:auto; margin-bottom:auto; margin-top:auto; border: 5px solid #23427f;"><!-- Image slider in footer --------------------------------------------->
+			<div style="width:40%; margin-left:auto; margin-right:auto; border: 5px solid #23427f;"><!-- Image slider in footer --------------------------------------------->
 
 					   <div class="carousel slide" id="myslider" data-ride="carousel">
 						   <div class="carousel-inner"><!-- ------------------images stored here------------------------------------------------------- -->
 							   <div class="item active"><!-- ----------------------------------------------------------------first image--------------- -->
-								   <img src="{% static 'images/1.jpg' %}" alt="1.jpg" style="width:100%;height:250px;">
+								   <img src="{% static 'images/msi_main_gate.jpg' %}" alt="1.jpg" style="width:100%;height:250px;">
 								   <div class="carousel-caption">
-									   <h3 style="color:red;">Image one</h3>
 								   </div>
 							   </div>
 							   <div class="item"><!-- -------------------------------------------------------second image------------------------------ -->
-								   <img src="{% static 'images/2.jpg' %}" alt="1.jpg" style="width:100%;height:250px;">
+								   <img src="{% static 'images/maharaja_surajmal_ji.jpg' %}" alt="1.jpg" style="width:100%;height:250px;">
 								   <div class="carousel-caption">
-									   <h3 style="color:red;">Image two</h3>
 								   </div>
 							   </div>
 							   <div class="item"><!-- ---------------------------------------------------------third image-------------------------- -->
-								   <img src="{% static 'images/3.jpg' %}" alt="1.jpg" style="width:100%;height:250px;">
+								   <img src="{% static 'images/msi_auditorium.jpg' %}" alt="1.jpg" style="width:100%;height:250px;">
 								   <div class="carousel-caption">
-									   <h3 style="color:red;">Image three</h3>
+								   </div>
+							   </div>
+							   <div class="item"><!-- ---------------------------------------------------------forth image-------------------------- -->
+								   <img src="{% static 'images/msi_library.jpg' %}" alt="1.jpg" style="width:100%;height:250px;">
+								   <div class="carousel-caption">
+								   </div>
+							   </div>
+							   <div class="item"><!-- ---------------------------------------------------------fifth image-------------------------- -->
+								   <img src="{% static 'images/msi_ground.jpg' %}" alt="1.jpg" style="width:100%;height:250px;">
+								   <div class="carousel-caption">
 								   </div>
 							   </div>
 
