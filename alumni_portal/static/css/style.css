@@ -464,6 +464,16 @@ overflow-x: hidden;
 
 }
 
+ .fab {
+    padding: 60px;
+	font-size: 40px;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+	border-radius: 50%;
+}
+
 
 /* ------------------Shubham rathore section --------------------------- */
 /* ------------------------ENDs HERE------------------------------------ */
