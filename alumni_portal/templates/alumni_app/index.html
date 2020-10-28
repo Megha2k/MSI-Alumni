@@ -5,6 +5,8 @@
 {% block base_body_block %}
 <!-- everything in this block will inherit from base.html -->
 
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+
 <h3>"Alumni are the fruits of MSI Education. Their alma maters nourished them, they are role models for our students."</h3>
 
 <div class="container" style="width:70%; margin-left:auto; margin-right:auto;"><!-- slide show  in body-->
@@ -12,7 +14,7 @@
     <div class="carousel slide" id="mysliderbody" data-ride="carousel">
         <div class="carousel-inner"  ><!-- images stored here -->
             {% for i in slideshow_obj %}
-            <div class="item active"><!-- first image-->
+            <div class="item"><!-- first image-->
                 <div class="card mb-3" style="width:100%; height:auto;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
@@ -30,15 +32,12 @@
             {% endfor %}
 
         </div>
-        <ol class="carousel-indicators" style="color:green;"><!--indicators-->
-            <li data-target="#mysliderbody" data-slide-to="0" class="active"></li>
-            <li data-target="#mysliderbody" data-slide-to="1" ></li>
-            <li data-target="#mysliderbody" data-slide-to="2" ></li>
-            <li data-target="#mysliderbody" data-slide-to="3" ></li>
-            <li data-target="#mysliderbody" data-slide-to="4" ></li>
-
+        <ol class="carousel-indicators"><!--indicators-->
+            {% for i in slideshow_obj %}
+                <li data-target="#mysliderbody" data-slide-to="0" style="background-color:grey;"></li>&nbsp;&nbsp;
+            {% endfor %}
         </ol>
-     <!--    <a class="carousel-control-prev" href="#mysliderbody" role="button" data-slide="prev" style="color:green;">
+    <!--    <a class="carousel-control-prev" href="#mysliderbody" role="button" data-slide="prev" style="color:green;">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
