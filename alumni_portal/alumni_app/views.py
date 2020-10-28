@@ -2,11 +2,15 @@ from django.shortcuts import render
 # from django.http import HttpResponse
 from django.http import HttpResponse, HttpResponseRedirect
 from alumni_app.forms import notice_form
+from alumni_app.forms import slideshow_form
 from alumni_app.models import notice_model
+from alumni_app.models import slideshow_model
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
+
 def index(request):
+
 	if request.method == "POST":
 
 		if 'login_form' in request.POST:
@@ -24,7 +28,9 @@ def index(request):
 				return render(request,'index.html',{"status":"Invalid username or password!"})
 	else:
 
-		return render(request, 'alumni_app/index.html')
+	    slideshow_obj = slideshow_model.objects.all()
+	    slideshow_list = {'slideshow_obj':slideshow_obj}
+	    return render(request, 'alumni_app/index.html',slideshow_list)
 
 
 @login_required
@@ -47,6 +53,7 @@ def notice(request):
 def msi_admin(request):
 
 	form_notice = notice_form(request.POST)
+	form_slideshow = slideshow_form(request.POST)
 
 	if 'notice_form' in request.POST:
 		form = notice_form(request.POST,request.FILES)
@@ -54,4 +61,10 @@ def msi_admin(request):
 			form.save(commit=True)
 		return render(request, 'alumni_app/msi_admin.html',{'notice_form':form})
 
-	return render(request, 'alumni_app/msi_admin.html',{'notice_form':form_notice})
+	if 'slideshow_form' in request.POST:
+		form = slideshow_form(request.POST)
+		if form.is_valid():
+			form.save(commit=True)
+		return render(request, 'alumni_app/msi_admin.html',{'slideshow_form':form})
+
+	return render(request, 'alumni_app/msi_admin.html',{'notice_form':form_notice,'slideshow_form':form_slideshow})
