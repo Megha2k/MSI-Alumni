@@ -26,6 +26,23 @@
 		</div>
 	</div>
 
+	<div class="card">
+		<div class="form-group">
+			<div class="card-header"><h3>Slideshow</h3>
+				<button id="slideshow_show_hide_btn" onclick="slideshow_show_hide()">+</button>
+			</div>
+			<ul class="list-group list-group-flush" id="slideshow_show_hide" style="display:none;">
+				<li class="list-group-item">
+					<form method="post" enctype="multipart/form-data" autocomplete="off">
+						{{slideshow_form.as_p}}
+						{% csrf_token %}
+						<div class="submit_btn"><input type="submit" class="btn btn-primary" name="slideshow_form" value="submit"></div>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 	</center>
 
 {% endblock %}
