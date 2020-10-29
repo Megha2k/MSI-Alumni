@@ -26,6 +26,74 @@
 		</div>
 	</div>
 
+	<div class="card">
+		<div class="form-group">
+			<div class="card-header"><h3>BCA Students</h3>
+				<button id="bca_students_show_hide_btn" onclick="bca_students_show_hide()">+</button>
+			</div>
+			<ul class="list-group list-group-flush" id="bca_students_show_hide">
+				<li class="list-group-item">
+					<form method="post" enctype="multipart/form-data" autocomplete="off">
+						{{bca_students_form.as_p}}
+						{% csrf_token %}
+						<div class="submit_btn"><input type="submit" class="btn btn-primary" name="bca_students_form" value="submit"></div>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="form-group">
+			<div class="card-header"><h3>BBA Students</h3>
+				<button id="bba_students_show_hide_btn" onclick="bba_students_show_hide()">+</button>
+			</div>
+			<ul class="list-group list-group-flush" id="bba_students_show_hide" style="display:none;">
+				<li class="list-group-item">
+					<form method="post" enctype="multipart/form-data" autocomplete="off">
+						{{bba_students_form.as_p}}
+						{% csrf_token %}
+						<div class="submit_btn"><input type="submit" class="btn btn-primary" name="bca_students_form" value="submit"></div>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="form-group">
+			<div class="card-header"><h3>B.Ed Students</h3>
+				<button id="bed_students_show_hide_btn" onclick="bed_students_show_hide()">+</button>
+			</div>
+			<ul class="list-group list-group-flush" id="bed_students_show_hide" style="display:none;">
+				<li class="list-group-item">
+					<form method="post" enctype="multipart/form-data" autocomplete="off">
+						{{bed_students.as_p}}
+						{% csrf_token %}
+						<div class="submit_btn"><input type="submit" class="btn btn-primary" name="bed_students_form" value="submit"></div>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="form-group">
+			<div class="card-header"><h3>B.Com Students</h3>
+				<button id="bcom_students_show_hide_btn" onclick="bcom_students_show_hide()">+</button>
+			</div>
+			<ul class="list-group list-group-flush" id="bcom_students_show_hide" style="display:none;">
+				<li class="list-group-item">
+					<form method="post" enctype="multipart/form-data" autocomplete="off">
+						{{bcom_students_form.as_p}}
+						{% csrf_token %}
+						<div class="submit_btn"><input type="submit" class="btn btn-primary" name="bcom_students_form" value="submit"></div>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 	</center>
 
 {% endblock %}

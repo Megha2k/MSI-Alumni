@@ -1,7 +1,7 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
-from alumni_app.forms import notice_form
-from alumni_app.models import notice_model
+from alumni_app.forms import notice_form,bca_students_form,bba_students_form,bed_students_form,bcom_students_form
+from alumni_app.models import notice_model,bca_students_model,bba_students_model,bed_students_model,bcom_students_model
 
 def index(request):
 	return render(request, 'alumni_app/index.html')
@@ -20,6 +20,10 @@ def notice(request):
 def msi_admin(request):
 
 	form_notice = notice_form(request.POST)
+	form_bca_students = bca_students_form(request.POST)
+	form_bba_students = bba_students_form(request.POST)
+	form_bed_students = bed_students_form(request.POST)
+	form_bcom_students = bcom_students_form(request.POST)
 	
 	if 'notice_form' in request.POST:
 		form = notice_form(request.POST,request.FILES)
@@ -27,4 +31,29 @@ def msi_admin(request):
 			form.save(commit=True)
 		return render(request, 'alumni_app/msi_admin.html',{'notice_form':form})
 
-	return render(request, 'alumni_app/msi_admin.html',{'notice_form':form_notice})
+	if 'bca_students_form' in request.POST:
+		form = bca_students_form(request.POST,request.FILES)
+		if form.is_valid():
+			form.save(commit=True)
+			
+		return render(request, 'alumni_app/msi_admin.html',{'bca_students_form':form})
+
+	if 'bba_students_form' in request.POST:
+		form = bba_students_form(request.POST,request.FILES)
+		if form.is_valid():
+			form.save(commit=True)
+		return render(request, 'alumni_app/msi_admin.html',{'bba_students_form':form})
+
+	if 'bed_students_form' in request.POST:
+		form = bed_students_form(request.POST,request.FILES)
+		if form.is_valid():
+			form.save(commit=True)
+		return render(request, 'alumni_app/msi_admin.html',{'bed_students_form':form})
+
+	if 'bcom_students_form' in request.POST:
+		form = bcom_students_form(request.POST,request.FILES)
+		if form.is_valid():
+			form.save(commit=True)
+		return render(request, 'alumni_app/msi_admin.html',{'bcom_students_form':form})
+
+	return render(request, 'alumni_app/msi_admin.html',{'notice_form':form_notice,'bca_students_form':form_bba_students,'bba_students_form':form_bca_students,'bed_students_form':form_bed_students,'bcom_students_form':form_bcom_students})
