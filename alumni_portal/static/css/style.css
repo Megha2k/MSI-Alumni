@@ -467,3 +467,9 @@ overflow-x: hidden;
 
 /* ------------------Shubham rathore section --------------------------- */
 /* ------------------------ENDs HERE------------------------------------ */
+
+
+/*CSS For Sign In navbar: just for its positioning*/
+.login{
+	margin-top: -50px;
+}
