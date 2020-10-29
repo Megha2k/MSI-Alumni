@@ -85,19 +85,18 @@
 					</nav>
 			<h1> MSI <span>Alumni assocation</span></h1>
 			</div>
-
-			<ul class="login">
-				{% if user.is_authenticated %}
-				<li class="nav-item">
-				  <h3><a class= "nav-link" href="{% url 'user_logout' %}"><i class = "fas fa-sign-out-alt"></i>Sign out</a></h3>
-				</li>
-				{% else %}
-				<li class="nav-item">
-				  <h3><a class= "nav-link" href="{% url 'homepage' %} #loginID" ><i class = "fas fa-sign-in-alt"></i>Sign in</a></h3>
-				</li>
-				{% endif %}
-			</ul>
-		</div>
+			</div>
+				<ul class="login">
+					{% if user.is_authenticated %}
+					<li class="nav-item">
+					  <h3><a class= "nav-link" href="{% url 'user_logout' %}"><i class = "fas fa-sign-out-alt"></i>Sign out</a></h3>
+					</li>
+					{% else %}
+					<li class="nav-item">
+					  <h3><a class= "nav-link" href="{% url 'homepage' %} #loginID" ><i class = "fas fa-sign-in-alt"></i>Sign in</a></h3>
+					</li>
+					{% endif %}
+			    </ul>
 	</div>
 
 	<div class="container" style=" margin-top:5%; margin-bottom:5%; margin-left:3%; border:2px black solid">
