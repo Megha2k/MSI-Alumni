@@ -12,10 +12,15 @@
 	<div class="card">
   		<ul class="list-group list-group-flush">
    			{% for i in notice_obj %}
-   				<li class="list-group-item"><a href="{{ i.file.url }}" download>{{ i.name }}</a></li>
+   				<li class="list-group-item"><a href="{{ i.file.url }}">{{ i.name }}</a></li>
    			{% endfor %}
   		</ul>
 	</div>
 	</center>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(this).scrollTop(0);
+		})
+	</script>
 
 {% endblock %}

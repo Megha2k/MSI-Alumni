@@ -29,5 +29,7 @@ urlpatterns = [
     path('achievements/', views.achievements, name='achievements'),
     path('notice/', views.notice, name='notice'),
     path('msi_admin/', views.msi_admin, name='msi_admin'),
+    url(r'^homepage',views.index,name='homepage'),
+    url(r'^user_logout',views.user_logout,name='user_logout'),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
