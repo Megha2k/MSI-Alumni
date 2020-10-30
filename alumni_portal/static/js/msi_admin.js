@@ -11,6 +11,19 @@ function notice_show_hide()
 		document.getElementById("notice_show_hide_btn").innerHTML = '+';
 	}
 }
+function slideshow_show_hide()
+{
+	if (document.getElementById("slideshow_show_hide").style.display=="none")
+	{
+		document.getElementById("slideshow_show_hide").style.display="inline";
+		document.getElementById("slideshow_show_hide_btn").innerHTML = '-';
+	}
+	else
+	{
+		document.getElementById("slideshow_show_hide").style.display="none";
+		document.getElementById("slideshow_show_hide_btn").innerHTML = '+';
+	}
+}
 function bca_students_show_hide()
 {
 	if (document.getElementById("bca_students_show_hide").style.display=="none")

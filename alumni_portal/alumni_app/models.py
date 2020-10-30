@@ -6,6 +6,11 @@ class notice_model(models.Model):
 	date = models.DateTimeField(default=datetime.now)
 	file = models.FileField(upload_to='notice', default="", blank=True)
 
+class slideshow_model(models.Model):
+	title = models.CharField(max_length=25, blank=True)
+	description = models.CharField(max_length=250, blank=True)
+	photo = models.ImageField(upload_to='slideshow', default="", blank=True)
+
 class bca_students_model(models.Model):
 	fname = models.CharField(max_length=25, blank=True)
 	lname = models.CharField(max_length=25, blank=True)
