@@ -24,7 +24,7 @@ class slideshow_form(forms.ModelForm):
 		widgets = {
 					'title':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'title to display'}),
 					'description':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'description of photograph'}),
-				# 	'photo':forms.ImageField(attrs={'required':True,'class':'form-control'})
+				 	'photo':forms.FileInput(attrs={'required':True,'class':'form-control'})
 				  }
 
 class bca_students_form(forms.ModelForm):
