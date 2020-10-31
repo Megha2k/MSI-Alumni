@@ -31,9 +31,9 @@ class bca_students_form(forms.ModelForm):
 
 	class Meta():
 		model = bca_students_model
-		fields = ['fname','lname','rollno','file']
+		fields = ['file']
 
-		labels = {'fname':'First Name','lname':'Last Name','rollno':'Roll Number','file':'File'}
+		labels = {'file':'File'}
 		widgets = {
 					'file':forms.FileInput(attrs={'required':True,'class':'form-control'})
 				  }
@@ -42,9 +42,9 @@ class bba_students_form(forms.ModelForm):
 
 	class Meta():
 		model = bba_students_model
-		fields = ['fname','lname','rollno','file']
+		fields = ['file']
 
-		labels = {'fname':'First Name','lname':'Last Name','rollno':'Roll Number','file':'File'}
+		labels = {'file':'File'}
 		widgets = {
 					'file':forms.FileInput(attrs={'required':True,'class':'form-control'})
 				  }
@@ -53,9 +53,9 @@ class bed_students_form(forms.ModelForm):
 
 	class Meta():
 		model = bed_students_model
-		fields = ['fname','lname','rollno','file']
+		fields = ['file']
 
-		labels = {'fname':'First Name','lname':'Last Name','rollno':'Roll Number','file':'File'}
+		labels = {'file':'File'}
 		widgets = {
 					'file':forms.FileInput(attrs={'required':True,'class':'form-control'})
 				  }
@@ -64,9 +64,9 @@ class bcom_students_form(forms.ModelForm):
 
 	class Meta():
 		model = bcom_students_model
-		fields = ['fname','lname','rollno','file']
+		fields = ['file']
 
-		labels = {'fname':'First Name','lname':'Last Name','rollno':'Roll Number','file':'File'}
+		labels = {'file':'File'}
 		widgets = {
 					'file':forms.FileInput(attrs={'required':True,'class':'form-control'})
 				  }

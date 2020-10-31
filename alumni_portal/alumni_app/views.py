@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from alumni_app.forms import notice_form,bca_students_form,bba_students_form,bed_students_form,bcom_students_form,slideshow_form
 from alumni_app.models import notice_model,bca_students_model,bba_students_model,bed_students_model,bcom_students_model,slideshow_model
+import pandas as pd
 
 def index(request):
     slideshow_obj = slideshow_model.objects.all()
@@ -43,25 +44,61 @@ def msi_admin(request):
 	if 'bca_students_form' in request.POST:
 		form = bca_students_form(request.POST,request.FILES)
 		if form.is_valid():
-			form.save(commit=True)
+			file = request.FILES['file']
+			csv = pd.read_csv(file)
+			for i in range(len(csv)):
+				fname = csv['fname'][i]
+				lname = csv['lname'][i]
+				rollno = csv['rollno'][i]
+				email = fname+str(rollno)+"@msi-ggsip.org"
+				academic_yr = str(csv['start yr'][i]) + "-" + str(csv['end yr'][i])
+				form = bca_students_model(fname=fname,lname=lname,rollno=rollno,email=email,academic_yr=academic_yr,file=file)
+				form.save()
 		return render(request, 'alumni_app/msi_admin.html',{'bca_students_form':form})
 
 	if 'bba_students_form' in request.POST:
 		form = bba_students_form(request.POST,request.FILES)
 		if form.is_valid():
-			form.save(commit=True)
+			file = request.FILES['file']
+			csv = pd.read_csv(file)
+			for i in range(len(csv)):
+				fname = csv['fname'][i]
+				lname = csv['lname'][i]
+				rollno = csv['rollno'][i]
+				email = fname+str(rollno)+"@msi-ggsip.org"
+				academic_yr = str(csv['start yr'][i]) + "-" + str(csv['end yr'][i])
+				form = bba_students_model(fname=fname,lname=lname,rollno=rollno,email=email,academic_yr=academic_yr,file=file)
+				form.save()
 		return render(request, 'alumni_app/msi_admin.html',{'bba_students_form':form})
 
 	if 'bed_students_form' in request.POST:
 		form = bed_students_form(request.POST,request.FILES)
 		if form.is_valid():
-			form.save(commit=True)
+			file = request.FILES['file']
+			csv = pd.read_csv(file)
+			for i in range(len(csv)):
+				fname = csv['fname'][i]
+				lname = csv['lname'][i]
+				rollno = csv['rollno'][i]
+				email = fname+str(rollno)+"@msi-ggsip.org"
+				academic_yr = str(csv['start yr'][i]) + "-" + str(csv['end yr'][i])
+				form = bed_students_model(fname=fname,lname=lname,rollno=rollno,email=email,academic_yr=academic_yr,file=file)
+				form.save()
 		return render(request, 'alumni_app/msi_admin.html',{'bed_students_form':form})
 
 	if 'bcom_students_form' in request.POST:
 		form = bcom_students_form(request.POST,request.FILES)
 		if form.is_valid():
-			form.save(commit=True)
+			file = request.FILES['file']
+			csv = pd.read_csv(file)
+			for i in range(len(csv)):
+				fname = csv['fname'][i]
+				lname = csv['lname'][i]
+				rollno = csv['rollno'][i]
+				email = fname+str(rollno)+"@msi-ggsip.org"
+				academic_yr = str(csv['start yr'][i]) + "-" + str(csv['end yr'][i])
+				form = bcom_students_model(fname=fname,lname=lname,rollno=rollno,email=email,academic_yr=academic_yr,file=file)
+				form.save()
 		return render(request, 'alumni_app/msi_admin.html',{'bcom_students_form':form})
 
 	return render(request, 'alumni_app/msi_admin.html',{'notice_form':form_notice,'bca_students_form':form_bba_students,'bba_students_form':form_bca_students,'bed_students_form':form_bed_students,'bcom_students_form':form_bcom_students,'slideshow_form':form_slideshow})
