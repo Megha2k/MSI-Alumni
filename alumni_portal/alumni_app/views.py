@@ -1,9 +1,18 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from alumni_app.forms import notice_form,bca_students_form,bba_students_form,bed_students_form,bcom_students_form,slideshow_form
 from alumni_app.models import notice_model,bca_students_model,bba_students_model,bed_students_model,bcom_students_model,slideshow_model
+from django.contrib.auth.models import User
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
 import pandas as pd
 
+
+@login_required
+def user_logout(request):
+	logout(request)
+	return HttpResponseRedirect("/homepage")
+	
 def index(request):
     slideshow_obj = slideshow_model.objects.all()
     slideshow_list = {'slideshow_obj':slideshow_obj}
