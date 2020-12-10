@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load socialaccount %}
 <html lang="en">
 <!-- Basic -->
 
@@ -131,12 +132,12 @@
     }
 
     @-webkit-keyframes animatezoom {
-      from {-webkit-transform: scale(0)} 
+      from {-webkit-transform: scale(0)}
       to {-webkit-transform: scale(1)}
     }
-      
+
     @keyframes animatezoom {
-      from {transform: scale(0)} 
+      from {transform: scale(0)}
       to {transform: scale(1)}
     }
 
@@ -194,17 +195,17 @@
                              <a class="dropdown-item" href="#">B.Com</a>
                              <a class="dropdown-item" href="#">B.Ed</a>
                              <div class="dropdown-divider"></div>
-                             
+
                            </div>
                         </li>
                         <li><a class="nav-link" href="{% url 'achievements' %}">Achievements</a></li>
                         <li><a class="nav-link" href="#">Events</a></li>
                         <li><a class="nav-link" href="{% url 'notice' %}">Notices</a></li>
                         <!-- <li><a class="nav-link" href="#">Placement</a></li> -->
-                        
+
 
             						<li><a class="nav-link" href="#contact">Contact us</a></li>
-                        <li><a class="nav-link active" style="background:#f2184f;color:#fff;" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign In</a></li>
+                        <!-- <li><a class="nav-link active" style="background:#f2184f;color:#fff;" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign In</a></li> -->
                     </ul>
                               </div>
                 <!--
@@ -218,8 +219,9 @@
             </div>
         </nav>
         <!-- CODE FOR POPUP LOGIN -->
+        <!--
         <div id="id01" class="modal">
-          
+
           <form class="modal-content animate" action="/action_page.php" method="post">
             <div class="imgcontainer">
               <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -232,7 +234,7 @@
 
               <label for="psw"><b>Password</b></label>
               <input type="password" placeholder="Enter Password" name="psw" required>
-                
+
               <button type="submit">Login</button>
               <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -257,10 +259,14 @@
         // }
 
         </script>
-        <!--POPUP LOGIN END-->
+        -->
+
+
+
+
     </header>
     <!-- End header -->
-   
+
 
 
 
@@ -321,13 +327,13 @@
 						</div>
                     </div>
                 </div>
-				
+
 				 <div class="col-xl-6 white_fonts">
 				    <div class="row">
 					   <div class="col-md-6">
 					     <div class="footer_blog footer_menu">
 						    <h3>Menus</h3>
-						    <ul> 
+						    <ul>
 							  <li><a href="index.html">Home</a></li>
 							  <li><a href="about.html">About Us</a></li>
 							  <li><a href="services.html">Services</a></li>
@@ -355,7 +361,7 @@
 				 </div>
 
             </div>
-            
+
         </div>
     </footer>
     <!-- End Footer -->
@@ -396,7 +402,7 @@
 (function ($) {
 	$.fn.countTo = function (options) {
 		options = options || {};
-		
+
 		return $(this).each(function () {
 			// set options for current element
 			var settings = $.extend({}, $.fn.countTo.defaults, {
@@ -406,58 +412,58 @@
 				refreshInterval: $(this).data('refresh-interval'),
 				decimals:        $(this).data('decimals')
 			}, options);
-			
+
 			// how many times to update the value, and how much to increment the value on each update
 			var loops = Math.ceil(settings.speed / settings.refreshInterval),
 				increment = (settings.to - settings.from) / loops;
-			
+
 			// references & variables that will change with each update
 			var self = this,
 				$self = $(this),
 				loopCount = 0,
 				value = settings.from,
 				data = $self.data('countTo') || {};
-			
+
 			$self.data('countTo', data);
-			
+
 			// if an existing interval can be found, clear it first
 			if (data.interval) {
 				clearInterval(data.interval);
 			}
 			data.interval = setInterval(updateTimer, settings.refreshInterval);
-			
+
 			// initialize the element with the starting value
 			render(value);
-			
+
 			function updateTimer() {
 				value += increment;
 				loopCount++;
-				
+
 				render(value);
-				
+
 				if (typeof(settings.onUpdate) == 'function') {
 					settings.onUpdate.call(self, value);
 				}
-				
+
 				if (loopCount >= loops) {
 					// remove the interval
 					$self.removeData('countTo');
 					clearInterval(data.interval);
 					value = settings.to;
-					
+
 					if (typeof(settings.onComplete) == 'function') {
 						settings.onComplete.call(self, value);
 					}
 				}
 			}
-			
+
 			function render(value) {
 				var formattedValue = settings.formatter.call(self, value, settings);
 				$self.html(formattedValue);
 			}
 		});
 	};
-	
+
 	$.fn.countTo.defaults = {
 		from: 0,               // the number the element should start at
 		to: 0,                 // the number the element should end at
@@ -468,7 +474,7 @@
 		onUpdate: null,        // callback method for every time the element is updated
 		onComplete: null       // callback method for when the element finishes updating
 	};
-	
+
 	function formatter(value, settings) {
 		return value.toFixed(settings.decimals);
 	}
@@ -481,10 +487,10 @@ jQuery(function ($) {
 	  return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
 	}
   });
-  
+
   // start all the timers
-  $('.timer').each(count);  
-  
+  $('.timer').each(count);
+
   function count(options) {
 	var $this = $(this);
 	options = $.extend({}, options || {}, $this.data('countToOptions') || {});

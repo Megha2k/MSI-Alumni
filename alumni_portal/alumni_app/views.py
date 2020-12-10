@@ -12,11 +12,28 @@ import pandas as pd
 def user_logout(request):
 	logout(request)
 	return HttpResponseRedirect("/homepage")
-	
+
 def index(request):
     slideshow_obj = slideshow_model.objects.all()
     slideshow_list = {'slideshow_obj':slideshow_obj}
-    return render(request, 'alumni_app/index.html',slideshow_list)
+    if request.method == "POST":
+
+    	if 'login_form' in request.POST:
+
+    		username = request.POST["username"]
+    		password = request.POST["password"]
+
+    		user = authenticate(username=username, password=password)
+
+    		if user and user.is_staff:
+    			login(request,user)
+    			return HttpResponseRedirect("/msi_admin")
+
+    		else:
+    			return render(request,'alumni_app/index.html',{"status":"Invalid username or password!"})
+    else:
+    	return render(request, 'alumni_app/index.html',slideshow_list)
+
 
 def bca_placement(request):
 	return render(request, 'alumni_app/bca_placement.html')

@@ -36,7 +36,7 @@ ALLOWED_HOSTS = ['msialumni.pythonanywhere.com']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'djando.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -142,3 +142,6 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+
