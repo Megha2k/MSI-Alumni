@@ -32,6 +32,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
 
+<<<<<<< HEAD
     <style>
     /* Full-width input fields */
     input[type=text], input[type=password] {
@@ -152,6 +153,9 @@
       }
     }
     </style>
+=======
+   
+>>>>>>> cda10d31c09b951b7cc2f3eb6ce724241c69e62c
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -205,16 +209,21 @@
 
 
             						<li><a class="nav-link" href="#contact">Contact us</a></li>
+<<<<<<< HEAD
                         <!-- <li><a class="nav-link active" style="background:#f2184f;color:#fff;" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign In</a></li> -->
+=======
+                        {% if user.is_authenticated %}
+                          <li><a href="#"class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto;">Welcome, {{ user.username }}</a></li>
+                  
+                        {% else %}
+                          <li><a href="{% provider_login_url 'google' %}"class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto;">Sign In</a></li>
+                        {% endif %}
+
+                        
+>>>>>>> cda10d31c09b951b7cc2f3eb6ce724241c69e62c
                     </ul>
-                              </div>
-                <!--
-                <div class="search-box">
-                    <input type="text" class="search-txt" placeholder="Search">
-                    <a class="search-btn">
-                        <img src="images/search_icon.png" alt="#" />
-                    </a>
                 </div>
+<<<<<<< HEAD
             -->
             </div>
         </nav>
@@ -264,6 +273,19 @@
 
 
 
+=======
+                
+            </div>
+        </nav>
+        <!-- fOR GOOGLE SIGN IN -->
+        {% if user.is_authenticated %}
+            <p>Welcome, {{ user.username }} </p>
+
+        {% else %}
+            <a href="{% provider_login_url 'google' %}">Login with Google</a>
+        {% endif %}
+        
+>>>>>>> cda10d31c09b951b7cc2f3eb6ce724241c69e62c
     </header>
     <!-- End header -->
 
