@@ -84,12 +84,12 @@
                         <!-- <li><a class="nav-link" href="#">Placement</a></li> -->
                         
 
-            						<li><a class="nav-link" href="#contact">Contact us</a></li>
+						<li><a class="nav-link" href="#contact">Contact us</a></li>
                         {% if user.is_authenticated %}
                           <li><a href="#"class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto;">Welcome, {{ user.username }}</a></li>
                   
                         {% else %}
-                          <li><a href="{% provider_login_url 'google' %}"class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto;">Sign In</a></li>
+                          <li><a href="{% provider_login_url 'google' %}?next={{ msi_admin }}"class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto;">Sign In</a></li>
                         {% endif %}
 
                         
