@@ -204,10 +204,10 @@
                         <li><a class="nav-link" href="{% url 'notice' %}">Notices</a></li>
                         <!-- <li><a class="nav-link" href="#">Placement</a></li> -->
 
-
-            						<li><a class="nav-link" href="#contact">Contact us</a></li>
+					<li><a class="nav-link" href="#contact">Contact us</a></li>
 
                         <!-- <li><a class="nav-link active" style="background:#f2184f;color:#fff;" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign In</a></li> -->
+
 
                         {% if user.is_authenticated %}
                           <li><a href="#"class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto;">Welcome, {{ user.username }}</a></li>
@@ -222,6 +222,7 @@
 
             </div>
         </nav>
+
         <!-- CODE FOR POPUP LOGIN -->
         <!--
         <div id="id01" class="modal">
