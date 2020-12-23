@@ -9,10 +9,10 @@
 
 	<center>
 
-	<div class="card">
+	<div class="card" id="notice_card">
 		<div class="form-group">
 			<div class="card-header"><h3>Notice</h3>
-				<button id="notice_show_hide_btn" onclick="notice_show_hide()">+</button>
+				<button id="notice_show_hide_btn" onclick="notice_show_hide()" style="background-color:#18a6f2;">+</button>
 			</div>
 			<ul class="list-group list-group-flush" id="notice_show_hide" style="display:none;">
 				<li class="list-group-item">
@@ -26,10 +26,27 @@
 		</div>
 	</div>
 
+	<div class="card" id="events_card">
+		<div class="form-group">
+			<div class="card-header"><h3>Events</h3>
+				<button id="events_show_hide_btn" onclick="events_show_hide()" style="background-color:#18a6f2;">+</button>
+			</div>
+			<ul class="list-group list-group-flush" id="events_show_hide" style="display:none;">
+				<li class="list-group-item">
+					<form method="post" enctype="multipart/form-data" autocomplete="off">
+						{{events_form.as_p}}
+						{% csrf_token %}
+						<div class="submit_btn"><input type="submit" class="btn btn-primary" name="events_form" value="submit"></div>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 	<div class="card">
 		<div class="form-group">
 			<div class="card-header"><h3>Slideshow</h3>
-				<button id="slideshow_show_hide_btn" onclick="slideshow_show_hide()">+</button>
+				<button id="slideshow_show_hide_btn" onclick="slideshow_show_hide()" style="background-color:#18a6f2;">+</button>
 			</div>
 			<ul class="list-group list-group-flush" id="slideshow_show_hide" style="display:none;">
 				<li class="list-group-item">
@@ -43,10 +60,44 @@
 		</div>
 	</div>
 
+    <div class="card">
+		<div class="form-group">
+			<div class="card-header"><h3>Placement Company</h3>
+				<button id="placement_companies_show_hide_btn" onclick="placement_companies_show_hide()" style="background-color:#18a6f2;">+</button>
+			</div>
+			<ul class="list-group list-group-flush" id="placement_companies_show_hide" style="display:none;">
+				<li class="list-group-item">
+					<form method="post" enctype="multipart/form-data" autocomplete="off">
+						{{placement_companies.as_p}}
+						{% csrf_token %}
+						<div class="submit_btn"><input type="submit" class="btn btn-primary" name="placement_companies_form" value="submit"></div>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="form-group">
+			<div class="card-header"><h3>Display Alumni</h3>
+				<button id="display_alumni_show_hide_btn" onclick="display_alumni_show_hide()" style="background-color:#18a6f2;">+</button>
+			</div>
+			<ul class="list-group list-group-flush" id="display_alumni_show_hide" style="display:none;">
+				<li class="list-group-item">
+					<form method="post" enctype="multipart/form-data" autocomplete="off">
+						{{display_alumni_form.as_p}}
+						{% csrf_token %}
+						<div class="submit_btn"><input type="submit" class="btn btn-primary" name="display_alumni_form" value="submit"></div>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 	<div class="card">
 		<div class="form-group">
 			<div class="card-header"><h3>BCA Students</h3>
-				<button id="bca_students_show_hide_btn" onclick="bca_students_show_hide()">+</button>
+				<button id="bca_students_show_hide_btn" onclick="bca_students_show_hide()" style="background-color:#18a6f2;">+</button>
 			</div>
 			<ul class="list-group list-group-flush" id="bca_students_show_hide" style="display:none;">
 				<li class="list-group-item">
@@ -63,7 +114,7 @@
 	<div class="card">
 		<div class="form-group">
 			<div class="card-header"><h3>BBA Students</h3>
-				<button id="bba_students_show_hide_btn" onclick="bba_students_show_hide()">+</button>
+				<button id="bba_students_show_hide_btn" onclick="bba_students_show_hide()" style="background-color:#18a6f2;">+</button>
 			</div>
 			<ul class="list-group list-group-flush" id="bba_students_show_hide" style="display:none;">
 				<li class="list-group-item">
@@ -80,7 +131,7 @@
 	<div class="card">
 		<div class="form-group">
 			<div class="card-header"><h3>B.Ed Students</h3>
-				<button id="bed_students_show_hide_btn" onclick="bed_students_show_hide()">+</button>
+				<button id="bed_students_show_hide_btn" onclick="bed_students_show_hide()" style="background-color:#18a6f2;" style="background-color:#18a6f2;">+</button>
 			</div>
 			<ul class="list-group list-group-flush" id="bed_students_show_hide" style="display:none;">
 				<li class="list-group-item">
@@ -97,7 +148,7 @@
 	<div class="card">
 		<div class="form-group">
 			<div class="card-header"><h3>B.Com Students</h3>
-				<button id="bcom_students_show_hide_btn" onclick="bcom_students_show_hide()">+</button>
+				<button id="bcom_students_show_hide_btn" onclick="bcom_students_show_hide()" style="background-color:#18a6f2;">+</button>
 			</div>
 			<ul class="list-group list-group-flush" id="bcom_students_show_hide" style="display:none;">
 				<li class="list-group-item">

@@ -11,6 +11,19 @@ function notice_show_hide()
 		document.getElementById("notice_show_hide_btn").innerHTML = '+';
 	}
 }
+function events_show_hide()
+{
+	if (document.getElementById("events_show_hide").style.display=="none")
+	{
+		document.getElementById("events_show_hide").style.display="inline";
+		document.getElementById("events_show_hide_btn").innerHTML = '-';
+	}
+	else
+	{
+		document.getElementById("events_show_hide").style.display="none";
+		document.getElementById("events_show_hide_btn").innerHTML = '+';
+	}
+}
 function slideshow_show_hide()
 {
 	if (document.getElementById("slideshow_show_hide").style.display=="none")
@@ -22,6 +35,32 @@ function slideshow_show_hide()
 	{
 		document.getElementById("slideshow_show_hide").style.display="none";
 		document.getElementById("slideshow_show_hide_btn").innerHTML = '+';
+	}
+}
+function display_alumni_show_hide()
+{
+	if (document.getElementById("display_alumni_show_hide").style.display=="none")
+	{
+		document.getElementById("display_alumni_show_hide").style.display="inline";
+		document.getElementById("display_alumni_show_hide_btn").innerHTML = '-';
+	}
+	else
+	{
+		document.getElementById("display_alumni_show_hide").style.display="none";
+		document.getElementById("display_alumni_show_hide_btn").innerHTML = '+';
+	}
+}
+function placement_companies_show_hide()
+{
+	if (document.getElementById("placement_companies_show_hide").style.display=="none")
+	{
+		document.getElementById("placement_companies_show_hide").style.display="inline";
+		document.getElementById("placement_companies_show_hide_btn").innerHTML = '-';
+	}
+	else
+	{
+		document.getElementById("placement_companies_show_hide").style.display="none";
+		document.getElementById("placement_companies_show_hide_btn").innerHTML = '+';
 	}
 }
 function bca_students_show_hide()

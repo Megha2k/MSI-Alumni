@@ -4,18 +4,53 @@
 {% block base_body_block %}
 <!-- everything in this block will inherit from base.html -->
 <link rel="stylesheet" type="text/css" href="{% static 'css/placement.css' %}">
+<script type="text/javascript" src="{% static 'js/placement.js' %}"></script>
 
 	<center><h3><b>BCA Placement</b></h3></center>
 
-	<center>
+    <center>
+	{% for i in placement_companies_obj %}
 	<div class="card">
-  		<div class="card-header"><b><h4>Amazon</h4></b></div>
+  		<div class="card-header"><b><h4>
+  		    <button id="company_details_show_hide_btn" onclick="company_details_show_hide()" style="background-color:#18a6f2;padding:0px;">{{ i.name }}</button>
+  		</h4></b></div>
   		<ul class="list-group list-group-flush">
     		<li class="list-group-item">2019-2020</li>
    			<li class="list-group-item">2018-2019</li>
    			<li class="list-group-item">2017-2018</li>
-  			</ul>
+  		</ul>
 	</div>
+
+    <div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg" style="margin-top:5%">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header justify-content-center">
+           <br><br><h4 class="modal-title justify-content-center"><u>{{ i.name }}</u></h4>
+           <button type="button" class="close" data-dismiss="modal" onclick="close_placement_modal()" style="width:10%;">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body" style="text-align:left;">
+            <p>{{ i.description }}</p>
+            <p>{{ i.month }}</p>
+            <p>{{ i.stipend }}</p>
+            <p>{{ i.bond }}</p>
+            <p>{{ i.rounds }}</p>
+            <p>{{ i.syllabus }}</p>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" id="close_btn" onclick="close_placement_modal()">OK</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+	{% endfor %}
 
 	<div class="card">
   		<div class="card-header"><b><h4>British Telecom</h4></b></div>
@@ -179,4 +214,5 @@
   			</ul>
 	</div>
 	</center>
+
 {% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "alumni_app/base.html" %}
+{% load static %}
+{% block base_body_block %}
+<!-- everything in this block will inherit from base.html -->
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/events.css' %}">
+
+	<center><h3><b>Events</b></h3></center>
+
+	<center>
+	<div class="card">
+  		<ul class="list-group list-group-flush">
+   			{% for i in events_obj %}
+   				<li class="list-group-item"><a href="{{ i.file.url }}">{{ i.name }}</a></li>
+   			{% endfor %}
+  		</ul>
+	</div>
+	</center>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(this).scrollTop(0);
+		})
+	</script>
+
+{% endblock %}

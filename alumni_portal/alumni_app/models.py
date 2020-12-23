@@ -6,10 +6,31 @@ class notice_model(models.Model):
 	date = models.DateTimeField(default=datetime.now)
 	file = models.FileField(upload_to='notice', default="", blank=True)
 
+class events_model(models.Model):
+	name = models.CharField(max_length=25, blank=True)
+	date = models.DateTimeField(default=datetime.now)
+	file = models.FileField(upload_to='events', default="", blank=True)
+
 class slideshow_model(models.Model):
 	title = models.CharField(max_length=25, blank=True)
 	description = models.CharField(max_length=250, blank=True)
 	photo = models.ImageField(upload_to='slideshow', default="", blank=True)
+
+class display_alumni_model(models.Model):
+	name = models.CharField(max_length=25, blank=True)
+	description = models.CharField(max_length=250, blank=True)
+	photo = models.ImageField(upload_to='slideshow', default="", blank=True)
+
+month_list = [('january','January'),('february','February'),('march','March'),('april','April'),('may','May'),('june','June'),('july','July'),('august','August'),('september','September'),('october','October'),('november','November'),('december','December')]
+
+class placement_companies_model(models.Model):
+    name = models.CharField(max_length=25, blank=True)
+    description = models.CharField(max_length=250, blank=True)
+    month = models.CharField(max_length=9, choices=month_list, default='august')
+    stipend = models.CharField(max_length=250, blank=True)
+    bond = models.CharField(max_length=10, blank=True)
+    rounds = models.CharField(max_length=250, blank=True)
+    syllabus = models.CharField(max_length=250, blank=True)
 
 class bca_students_model(models.Model):
 	fname = models.CharField(max_length=25, blank=True)

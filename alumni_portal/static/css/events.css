@@ -1,0 +1,13 @@
+.card
+{
+	width: 90%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	border: 2px grey solid;
+}
+
+.list-group-item
+{
+	border: 1px grey solid;
+	text-align: left;
+}

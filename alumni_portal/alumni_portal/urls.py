@@ -29,6 +29,7 @@ urlpatterns = [
     path('bca_placement/', views.bca_placement, name='bca_placement'),
     path('achievements/', views.achievements, name='achievements'),
     path('notice/', views.notice, name='notice'),
+    path('events/', views.events, name='events'),
     path('msi_admin/', views.msi_admin, name='msi_admin'),
     url(r'^homepage',views.index,name='homepage'),
     url(r'^user_logout',views.user_logout,name='user_logout'),
