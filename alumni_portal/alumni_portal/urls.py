@@ -20,9 +20,13 @@ from django.conf.urls import include
 from alumni_app import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^login/$', auth_views.login, name='login'),
+    url(r'^logout/$', auth_views.logout, name='logout'),
+
     path('accounts/', include('allauth.urls')), # GOOGLE SIGN IN
     url(r'^alumni_app/', include('alumni_app.urls')),
     url(r'^$', views.index, name='index'),
