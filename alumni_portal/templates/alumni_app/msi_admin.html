@@ -68,10 +68,102 @@
 			<ul class="list-group list-group-flush" id="placement_companies_show_hide" style="display:none;">
 				<li class="list-group-item">
 					<form method="post" enctype="multipart/form-data" autocomplete="off">
-						{{placement_companies.as_p}}
+						{{placement_companies_form.as_p}}
 						{% csrf_token %}
 						<div class="submit_btn"><input type="submit" class="btn btn-primary" name="placement_companies_form" value="submit"></div>
 					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="form-group">
+			<div class="card-header"><h3>Achievements</h3>
+				<button id="grant_achievements_show_hide_btn" onclick="grant_achievements_show_hide()" style="background-color:#18a6f2;">+</button>
+			</div>
+			<ul class="list-group list-group-flush" id="grant_achievements_show_hide" style="display:none;">
+			    <small>* grant / discard the achievements serial wise only !</small>
+				<li class="list-group-item">
+				    <center>
+                        <div class="card mb-3" style="max-width:60%;max-height:8%;text-align:left;border: 1px grey solid;">
+
+                            {% for key,value in list_achievements.items %}
+                            {% for i in value %}
+                            <div class="row no-gutters" style="border-bottom: 1px solid grey;">
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <p class="card-text">{{i.achievement_name}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button" class="btn btn-info" style="width:60%;" id="achievements_show_hide_btn" onclick="achievements_show_hide_{{forloop.counter}}()">view</button>
+                                </div>
+                            </div>
+
+                            <div class="modal" id="myModal_{{forloop.counter}}">
+                                <div class="modal-dialog modal-lg" style="margin-top:1%">
+                                    <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header justify-content-center">
+                                        <br><br><h4 class="modal-title justify-content-center"><b>{{ i.achievement_name }}</b></h4>
+                                        <button type="button" class="close" data-dismiss="modal" onclick="close_achievement_modal_{{forloop.counter}}()" style="width:10%;">&times;</button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body" style="text-align:left;">
+                                        <p><b>{{ "Names of Achiever(s)&nbsp;&nbsp;:&nbsp;&nbsp;" }}</b>{{ i.names }}</p>
+                                        <center><p><img class="img-responsive" src="/media/{{i.photo}}" alt="#" /></p></center>
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+					                    <form method="post" enctype="multipart/form-data" id="grant" autocomplete="off" style="display:none;">
+						                    {{grant_achievements_form.as_p}}
+						                    {% csrf_token %}
+					                        <div class="submit_btn"><input type="submit" class="btn btn-primary" name="grant_achievements_form" id="achievement_btn" value="submit"></div>
+					                    </form>
+                                        <button type="button" class="btn btn-success" id="close_btn" onclick="set_value_{{forloop.counter}}()">grant</button>
+					                    <button type="button" class="btn btn-danger" id="close_btn" onclick="set_value2_{{forloop.counter}}()">discard</button>
+					                    <script>
+					                       function set_value_{{forloop.counter}}()
+					                       {
+					                           document.getElementById("checked_id").id = "checked_id_{{forloop.counter}}";
+					                           document.getElementById("achievement_name_id").id = "achievement_name_id_{{forloop.counter}}";
+					                           document.getElementById("checked_id_{{forloop.counter}}").selectedIndex = 1;
+					                           document.getElementById("achievement_name_id_{{forloop.counter}}").value = "{{i.achievement_name}}";
+					                           document.getElementById("achievement_btn").click();
+					                       }
+					                       function set_value2_{{forloop.counter}}()
+					                       {
+					                           document.getElementById("checked_id").id = "checked_id_{{forloop.counter}}";
+					                           document.getElementById("achievement_name_id").id = "achievement_name_id_{{forloop.counter}}";
+					                           document.getElementById("achievement_name_id_{{forloop.counter}}").value = "{{i.achievement_name}}";
+					                           document.getElementById("checked_id_{{forloop.counter}}").selectedIndex = 2;
+					                           document.getElementById("achievement_btn").click();
+					                       }
+					                    </script>
+                                    </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                function achievements_show_hide_{{forloop.counter}}()
+                                {
+                                	$('#myModal_{{forloop.counter}}').show();
+                                }
+                                function close_achievement_modal_{{forloop.counter}}()
+                                {
+	                                $('#myModal_{{forloop.counter}}').hide();
+                                }
+                            </script>
+                            {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </center>
+
 				</li>
 			</ul>
 		</div>

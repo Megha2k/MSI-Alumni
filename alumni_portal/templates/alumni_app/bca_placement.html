@@ -27,18 +27,18 @@
 
         <!-- Modal Header -->
         <div class="modal-header justify-content-center">
-           <br><br><h4 class="modal-title justify-content-center"><u>{{ i.name }}</u></h4>
+           <br><br><h4 class="modal-title justify-content-center"><b>{{ i.name }}</b></h4>
            <button type="button" class="close" data-dismiss="modal" onclick="close_placement_modal()" style="width:10%;">&times;</button>
         </div>
 
         <!-- Modal body -->
         <div class="modal-body" style="text-align:left;">
             <p>{{ i.description }}</p>
-            <p>{{ i.month }}</p>
-            <p>{{ i.stipend }}</p>
-            <p>{{ i.bond }}</p>
-            <p>{{ i.rounds }}</p>
-            <p>{{ i.syllabus }}</p>
+            <p><b>{{ "Month of arrival&nbsp;&nbsp;:&nbsp;&nbsp;" }}</b>{{ i.month }}</p>
+            <p><b>{{ "Stipend&nbsp;&nbsp;:&nbsp;&nbsp;" }}</b>{{ i.stipend }}</p>
+            <p><b>{{ "Bond&nbsp;&nbsp;:&nbsp;&nbsp;" }}</b>{{ i.bond }}</p>
+            <p><b>{{ "Rounds&nbsp;&nbsp;:&nbsp;&nbsp;" }}</b>{{ i.rounds }}</p>
+            <p><b>{{ "Syllabus&nbsp;&nbsp;:&nbsp;&nbsp;" }}</b>{{ i.syllabus }}</p>
         </div>
 
         <!-- Modal footer -->

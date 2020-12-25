@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "alumni_app/base.html" %}
+{% load static %}
+{% block base_body_block %}
+<!-- everything in this block will inherit from base.html -->
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/alumni.css' %}">
+<script type="text/javascript" src="{% static 'js/alumni.js' %}"></script>
+
+    <center>
+
+    <div class="card">
+		<div class="form-group">
+			<div class="card-header"><h3>Achievements</h3>
+				<button id="achievements_show_hide_btn" onclick="achievements_show_hide()" style="background-color:#18a6f2;">+</button>
+			</div>
+			<ul class="list-group list-group-flush" id="achievements_show_hide" style="display:none;">
+				<li class="list-group-item">
+					<form method="post" enctype="multipart/form-data" autocomplete="off">
+						{{submit_achievements_form.as_p}}
+						{% csrf_token %}
+						<div class="submit_btn"><input type="submit" class="btn btn-primary" name="submit_achievements_form" value="submit"></div>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	</center>
+
+{% endblock %}

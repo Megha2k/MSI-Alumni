@@ -63,6 +63,19 @@ function placement_companies_show_hide()
 		document.getElementById("placement_companies_show_hide_btn").innerHTML = '+';
 	}
 }
+function grant_achievements_show_hide()
+{
+	if (document.getElementById("grant_achievements_show_hide").style.display=="none")
+	{
+		document.getElementById("grant_achievements_show_hide").style.display="inline";
+		document.getElementById("grant_achievements_show_hide_btn").innerHTML = '-';
+	}
+	else
+	{
+		document.getElementById("grant_achievements_show_hide").style.display="none";
+		document.getElementById("grant_achievements_show_hide_btn").innerHTML = '+';
+	}
+}
 function bca_students_show_hide()
 {
 	if (document.getElementById("bca_students_show_hide").style.display=="none")

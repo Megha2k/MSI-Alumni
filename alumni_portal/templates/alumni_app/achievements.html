@@ -7,61 +7,66 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/achievement.css' %}">
 <script type="text/javascript" src="{% static 'js/achievements.js' %}"></script>
 
-  <center>
-  <div class="card">
-      <div class="card-header"><h3><b>Achievements</b></h3>
-        <button id="ach_show_hide_btn" onclick="ach_show_hide()" style="background-color:#18a6f2;">+</button>
-      </div>
-      <ul class="list-group list-group-flush" id="ach_show_hide" style="display:none;">
-        <li class="list-group-item">jsdghbjhaj</li>
-        <li class="list-group-item">sauhgjhbchjas</li>
-        <li class="list-group-item">jsgfubsciugtcdu</li>
-        </ul>
-  </div>
+  	<center><h3><b>Achievments</b></h3></center>
 
-  <div class="card">
-      <div class="card-header"><h4><b>BCA Achievements</b></h4>
-        <button id="bca_ach_show_hide_btn" onclick="bca_ach_show_hide()" style="background-color:#18a6f2;">+</button>
-      </div>
-      <ul class="list-group list-group-flush" id="bca_ach_show_hide" style="display:none;">
-        <li class="list-group-item">jsdghbjhaj</li>
-        <li class="list-group-item">sauhgjhbchjas</li>
-        <li class="list-group-item">jsgfubsciugtcdu</li>
-        </ul>
-  </div>
+	<center>
+	<div class="card">
+  		<ul class="list-group list-group-flush">
+   			    <center>
+                        <div class="card mb-3" style="max-width:60%;max-height:8%;text-align:left;border: 1px grey solid;">
+                            {% for i in achievements_obj %}
 
-  <div class="card">
-      <div class="card-header"><h4><b>BBA Achievements</b></h4>
-        <button id="bba_ach_show_hide_btn" onclick="bba_ach_show_hide()" style="background-color:#18a6f2;">+</button>
-      </div>
-      <ul class="list-group list-group-flush" id="bba_ach_show_hide" style="display:none;">
-        <li class="list-group-item">jsdghbjhaj</li>
-        <li class="list-group-item">sauhgjhbchjas</li>
-        <li class="list-group-item">jsgfubsciugtcdu</li>
-        </ul>
-  </div>
+                            <div class="row no-gutters" style="border-bottom: 1px solid grey;">
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <p class="card-text">{{i.achievement_name}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button" class="btn btn-info" style="width:60%;" id="achievements_show_hide_btn" onclick="achievements_show_hide_{{forloop.counter}}()">view</button>
+                                </div>
+                            </div>
 
-  <div class="card">
-      <div class="card-header"><h4><b>B.Com. Achievements</b></h4>
-        <button id="bcom_ach_show_hide_btn" onclick="bcom_ach_show_hide()" style="background-color:#18a6f2;">+</button>
-      </div>
-      <ul class="list-group list-group-flush" id="bcom_ach_show_hide" style="display:none;">
-        <li class="list-group-item">jsdghbjhaj</li>
-        <li class="list-group-item">sauhgjhbchjas</li>
-        <li class="list-group-item">jsgfubsciugtcdu</li>
-        </ul>
-  </div>
+                            <div class="modal" id="myModal_{{forloop.counter}}">
+                                <div class="modal-dialog modal-lg" style="margin-top:5%">
+                                    <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header justify-content-center">
+                                        <br><br><h4 class="modal-title justify-content-center"><b>{{ i.achievement_name }}</b></h4>
+                                        <button type="button" class="close" data-dismiss="modal" onclick="close_achievement_modal_{{forloop.counter}}()" style="width:10%;">&times;</button>
+                                    </div>
 
-  <div class="card">
-      <div class="card-header"><h4><b>B.Ed. Achievements</b></h4>
-        <button id="bed_ach_show_hide_btn" onclick="bed_ach_show_hide()" style="background-color:#18a6f2;">+</button>
-      </div>
-      <ul class="list-group list-group-flush" id="bed_ach_show_hide" style="display:none;">
-        <li class="list-group-item">jsdghbjhaj</li>
-        <li class="list-group-item">sauhgjhbchjas</li>
-        <li class="list-group-item">jsgfubsciugtcdu</li>
-        </ul>
-  </div>
-  </center>
+                                    <!-- Modal body -->
+                                    <div class="modal-body" style="text-align:left;">
+                                        <p><b>{{ "Names of Achiever(s)&nbsp;&nbsp;:&nbsp;&nbsp;" }}</b>{{ i.names }}</p>
+                                        <center><p><img class="img-responsive" src="/media/{{i.photo}}" alt="#" /></p></center>
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" id="close_btn" onclick="close_achievement_modal_{{forloop.counter}}()">OK</button>
+                                    </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                function achievements_show_hide_{{forloop.counter}}()
+                                {
+                                	$('#myModal_{{forloop.counter}}').show();
+                                }
+                                function close_achievement_modal_{{forloop.counter}}()
+                                {
+	                                $('#myModal_{{forloop.counter}}').hide();
+                                }
+                            </script>
+
+                            {% endfor %}
+                        </div>
+                    </center>
+  		</ul>
+	</div>
+	</center>
 
 {% endblock %}

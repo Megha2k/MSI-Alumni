@@ -144,6 +144,6 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 
 
-LOGIN_REDIRECT_URL = "msi_admin"
+LOGIN_REDIRECT_URL = "login_success"
 
 

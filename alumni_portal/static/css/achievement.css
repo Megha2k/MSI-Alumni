@@ -1,19 +1,13 @@
 .card
 {
-	width: 90%;
+	width: 70%;
 	margin-top: 2%;
 	margin-bottom: 2%;
-	border: 2px blue solid;
-}
-
-.card-header
-{
-	background-color: #18a6f2;
-	border: 1px blue solid;
+	border: 2px grey solid;
 }
 
 .list-group-item
 {
-	border: 1px blue solid;
+	border: 1px grey solid;
 	text-align: left;
 }

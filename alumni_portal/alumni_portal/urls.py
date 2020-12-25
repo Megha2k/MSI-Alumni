@@ -23,14 +23,16 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')), # SHUBHAM GOOGLE SIGN IN
+    path('accounts/', include('allauth.urls')), # GOOGLE SIGN IN
     url(r'^alumni_app/', include('alumni_app.urls')),
     url(r'^$', views.index, name='index'),
     path('bca_placement/', views.bca_placement, name='bca_placement'),
     path('achievements/', views.achievements, name='achievements'),
     path('notice/', views.notice, name='notice'),
     path('events/', views.events, name='events'),
+    path('login_success/', views.login_success, name='login_success'),
     path('msi_admin/', views.msi_admin, name='msi_admin'),
+    path('alumni/', views.alumni, name='alumni'),
     url(r'^homepage',views.index,name='homepage'),
     url(r'^user_logout',views.user_logout,name='user_logout'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

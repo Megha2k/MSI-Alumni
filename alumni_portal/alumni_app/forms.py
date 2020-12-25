@@ -1,6 +1,6 @@
 from django import forms
 from django.db import models
-from alumni_app.models import notice_model,events_model,display_alumni_model,placement_companies_model,bca_students_model,bba_students_model,bed_students_model,bcom_students_model,slideshow_model
+from alumni_app.models import notice_model,events_model,display_alumni_model,placement_companies_model,achievements_model,bca_students_model,bba_students_model,bed_students_model,bcom_students_model,slideshow_model
 
 class notice_form(forms.ModelForm):
 
@@ -35,7 +35,7 @@ class display_alumni_form(forms.ModelForm):
 		labels = {'name':'Name','description':'Description','photo':'Photo'}
 		widgets = {
 					'name':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'Name of Alumni'}),
-					'description':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'description of his/her achievement(s)'}),
+					'description':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'description of his/her achievement(s)'}),
 				 	'photo':forms.FileInput(attrs={'required':True,'class':'form-control'})
 				  }
 
@@ -43,13 +43,11 @@ class slideshow_form(forms.ModelForm):
 
 	class Meta():
 		model = slideshow_model
-		fields = ['title','description','photo']
+		fields = ['photo']
 
-		labels = {'title':'Title','description':'Description','photo':'Photo'}
+		labels = {'photo':'Photo'}
 		widgets = {
-					'title':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'title to display'}),
-					'description':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'description of photograph'}),
-				 	'photo':forms.FileInput(attrs={'required':True,'class':'form-control'})
+					'photo':forms.FileInput(attrs={'required':True,'class':'form-control'})
 				  }
 
 class placement_companies_form(forms.ModelForm):
@@ -62,12 +60,36 @@ class placement_companies_form(forms.ModelForm):
 
         widgets = {
 					'name':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'name of company'}),
-					'description':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'description of company offerings'}),
-				 	'stipend':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'stipend details'}),
+					'description':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'description of company offerings'}),
+				 	'stipend':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'stipend details'}),
 				 	'bond':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'bond (if any)'}),
-				 	'rounds':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'names & no. of rounds'}),
-				 	'syllabus':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'syllabus for preparation'}),
+				 	'rounds':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'names & no. of rounds'}),
+				 	'syllabus':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'syllabus for preparation'}),
 				 	'month': forms.Select(attrs={'required':True})
+				  }
+
+class submit_achievements_form(forms.ModelForm):
+
+	class Meta():
+		model = achievements_model
+		fields = ['names','achievement_name','photo']
+
+		labels = {'names':'Names','achievement_name':'Achievement Name','photo':'Photograph / Collage'}
+		widgets = {
+					'names':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'Names of Achievers'}),
+					'achievement_name':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'Name of Achievement'}),
+					'photo':forms.FileInput(attrs={'required':True,'class':'form-control'})
+				  }
+
+class grant_achievements_form(forms.ModelForm):
+
+	class Meta():
+		model = achievements_model
+		fields = ['achievement_name','checked']
+
+		widgets = {
+					'checked': forms.Select(attrs={'required':True,'class':'form-control','id':'checked_id'}),
+					'achievement_name':forms.TextInput(attrs={'required':True,'class':'form-control','id':'achievement_name_id'})
 				  }
 
 class bca_students_form(forms.ModelForm):
