@@ -24,9 +24,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'accounts/login/$',views.login, name='login'),
-    url(r'accounts/logout/$',views.logout, name='logout'),
-
+    
     path('accounts/', include('allauth.urls')), # GOOGLE SIGN IN
     url(r'^alumni_app/', include('alumni_app.urls')),
     url(r'^$', views.index, name='index'),

@@ -143,8 +143,7 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
+
 LOGIN_REDIRECT_URL = "login_success"
 
 
