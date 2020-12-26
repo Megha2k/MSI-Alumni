@@ -15,7 +15,7 @@
 				<button id="achievements_show_hide_btn" onclick="achievements_show_hide()" style="background-color:#18a6f2;">+</button>
 			</div>
 			<ul class="list-group list-group-flush" id="achievements_show_hide" style="display:none;">
-				<li class="list-group-item">
+				<li class="list-group-item" style="width:70%;align:center;">
 					<form method="post" enctype="multipart/form-data" autocomplete="off">
 						{{submit_achievements_form.as_p}}
 						{% csrf_token %}

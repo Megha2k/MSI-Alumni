@@ -20,6 +20,7 @@ class display_alumni_model(models.Model):
 	photo = models.ImageField(upload_to='slideshow', default="", blank=True)
 
 month_list = [('january','January'),('february','February'),('march','March'),('april','April'),('may','May'),('june','June'),('july','July'),('august','August'),('september','September'),('october','October'),('november','November'),('december','December')]
+check_list = [('yes','yes'),('no','no'),('unknown','unknown')]
 
 class placement_companies_model(models.Model):
     name = models.CharField(max_length=25, blank=True)
@@ -29,14 +30,16 @@ class placement_companies_model(models.Model):
     bond = models.CharField(max_length=10, blank=True)
     rounds = models.TextField(max_length=250, blank=True)
     syllabus = models.TextField(max_length=250, blank=True)
-
-check_list = [('yes','yes'),('no','no'),('unknown','unknown')]
+    bca = models.CharField(max_length=7, choices=check_list, default='unknown', blank=True)
+    bba = models.CharField(max_length=7, choices=check_list, default='unknown', blank=True)
+    bed = models.CharField(max_length=7, choices=check_list, default='unknown', blank=True)
+    bcom = models.CharField(max_length=7, choices=check_list, default='unknown', blank=True)
 
 class achievements_model(models.Model):
     names = models.CharField(max_length=250, blank=True)
     achievement_name = models.CharField(max_length=40, blank=True)
     photo = models.ImageField(upload_to='slideshow', default="", blank=True)
-    checked = models.CharField(max_length=9, choices=check_list, default='unknown', blank=True)
+    checked = models.CharField(max_length=7, choices=check_list, default='unknown', blank=True)
 
 class bca_students_model(models.Model):
 	fname = models.CharField(max_length=25, blank=True)

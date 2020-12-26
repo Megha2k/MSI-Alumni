@@ -35,7 +35,7 @@ class display_alumni_form(forms.ModelForm):
 		labels = {'name':'Name','description':'Description','photo':'Photo'}
 		widgets = {
 					'name':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'Name of Alumni'}),
-					'description':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'description of his/her achievement(s)'}),
+					'description':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'description of his/her achievement(s)','rows':3}),
 				 	'photo':forms.FileInput(attrs={'required':True,'class':'form-control'})
 				  }
 
@@ -54,18 +54,22 @@ class placement_companies_form(forms.ModelForm):
 
     class Meta():
         model = placement_companies_model
-        fields = ['name','description','month','stipend','bond','rounds','syllabus']
+        fields = ['name','description','month','stipend','bond','rounds','syllabus','bca','bba','bed','bcom']
 
-        labels = {'name':'Name','description':'Description','month':'Month','stipend':'Stipend','bond':'Bond','rounds':'Rounds','syllabus':'Syllabus'}
+        labels = {'name':'Name','description':'Description','month':'Month','stipend':'Stipend','bond':'Bond','rounds':'Rounds','syllabus':'Syllabus','bca':'BCA','bba':'BBA','bed':'BEd','bcom':'BCom'}
 
         widgets = {
 					'name':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'name of company'}),
-					'description':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'description of company offerings'}),
-				 	'stipend':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'stipend details'}),
+					'description':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'description of company offerings','rows':3}),
+				 	'stipend':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'stipend details','rows':3}),
 				 	'bond':forms.TextInput(attrs={'required':True,'class':'form-control','placeholder':'bond (if any)'}),
-				 	'rounds':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'names & no. of rounds'}),
-				 	'syllabus':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'syllabus for preparation'}),
-				 	'month': forms.Select(attrs={'required':True})
+				 	'rounds':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'names & no. of rounds','rows':3}),
+				 	'syllabus':forms.Textarea(attrs={'required':True,'class':'form-control','placeholder':'syllabus for preparation','rows':5}),
+				 	'month': forms.Select(attrs={'required':True}),
+				 	'bca': forms.Select(attrs={'required':True}),
+				 	'bba': forms.Select(attrs={'required':True}),
+				 	'bed': forms.Select(attrs={'required':True}),
+				 	'bcom': forms.Select(attrs={'required':True})
 				  }
 
 class submit_achievements_form(forms.ModelForm):

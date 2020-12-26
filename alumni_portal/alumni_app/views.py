@@ -42,7 +42,22 @@ def index(request):
 
 
 def bca_placement(request):
-    placement_companies_obj = placement_companies_model.objects.all()
+    placement_companies_obj = placement_companies_model.objects.all().filter(bca="yes").order_by('name')
+    placement_companies_list = {'placement_companies_obj':placement_companies_obj}
+    return render(request, 'alumni_app/bca_placement.html',placement_companies_list)
+
+def bba_placement(request):
+    placement_companies_obj = placement_companies_model.objects.all().filter(bba="yes").order_by('name')
+    placement_companies_list = {'placement_companies_obj':placement_companies_obj}
+    return render(request, 'alumni_app/bca_placement.html',placement_companies_list)
+
+def bed_placement(request):
+    placement_companies_obj = placement_companies_model.objects.all().filter(bed="yes").order_by('name')
+    placement_companies_list = {'placement_companies_obj':placement_companies_obj}
+    return render(request, 'alumni_app/bca_placement.html',placement_companies_list)
+
+def bcom_placement(request):
+    placement_companies_obj = placement_companies_model.objects.all().filter(bcom="yes").order_by('name')
     placement_companies_list = {'placement_companies_obj':placement_companies_obj}
     return render(request, 'alumni_app/bca_placement.html',placement_companies_list)
 
@@ -52,15 +67,16 @@ def achievements(request):
     return render(request, 'alumni_app/achievements.html',achievements_list)
 
 def notice(request):
-	notice_obj = notice_model.objects.all()
+	notice_obj = reversed(notice_model.objects.all())
 	notice_list = {'notice_obj':notice_obj}
 	return render(request, 'alumni_app/notice.html',notice_list)
 
 def events(request):
-	events_obj = events_model.objects.all()
+	events_obj = reversed(events_model.objects.all())
 	events_list = {'events_obj':events_obj}
 	return render(request, 'alumni_app/events.html',events_list)
 
+@login_required
 def login_success(request):
     bca_student = bca_students_model.objects.all().filter(email=request.user.email)
     bba_student = bba_students_model.objects.all().filter(email=request.user.email)
@@ -82,6 +98,7 @@ def login_success(request):
         pass
     return index(request)
 
+@login_required
 def alumni(request):
 
     form_submit_achievements = submit_achievements_form(request.POST)
@@ -94,6 +111,7 @@ def alumni(request):
 
     return render(request, 'alumni_app/alumni.html',{'submit_achievements_form':form_submit_achievements})
 
+@login_required
 def msi_admin(request):
 
     form_notice = notice_form(request.POST)
