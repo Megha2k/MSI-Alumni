@@ -514,6 +514,38 @@ a.navbar-brand {
 	font-size: 25px;
 }
 
+/*-----------------------------------Banner----------------------------*/
+.sample
+{
+	background-color: #fff;
+	height: auto;
+	width: 100%;
+	position: relative;
+}
+ .sample .test img
+ {
+ 	padding-top: 100px;
+ 	width: 100%;
+ }
+ .sample .test .textOnImage
+ {
+ 	position:absolute;
+ 	background-color: white;
+ 	top:500px;
+ 	left: 20px;
+ 	right: 20px;
+ 	text-align: center;
+ 	font-size: 40px;
+ 	color :crimson; 
+ }
+
+ .sample .test .textOnImage span
+ {
+ 	font-weight:bold;
+ 	font-size: 45px; 
+ }
+
+
 /*------------------------------------------------------------------ Banner -------------------------------------------------------------------*/
 
 .home-slider {
