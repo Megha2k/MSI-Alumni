@@ -137,7 +137,7 @@ padding: 7px 15px;
 .heading_main h2 {
     font-size: 35px;
 }
-	.top-header #navbarNavDropdown {
+	.top-header #navbar-wd {
          padding-right: 0;
     }
      footer.footer-box p {
@@ -287,7 +287,7 @@ padding: 7px 15px;
          font-weight: 300;
          margin-top: 5px;
     }
-     .top-header #navbarNavDropdown {
+     .top-header #navbar-wd {
          padding-right: 0;
     }
      .heading_main {
