@@ -1,3 +1,3 @@
-$(document).ready(function () {
-  $('#mysliderbody').find('.item').first().addClass('active');
-});
+// $(document).ready(function () {
+//   $('#slideshow_carousel').addClass('active');
+// });

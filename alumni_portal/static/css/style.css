@@ -1,4 +1,4 @@
-/*------------------------------------------------------------------
+  /*------------------------------------------------------------------
     IMPORT FONTS
 -------------------------------------------------------------------*/
 
@@ -524,25 +524,25 @@ a.navbar-brand {
 }
  .sample .test img
  {
- 	padding-top: 100px;
+ 	padding-top: 60px;
  	width: 100%;
  }
  .sample .test .textOnImage
  {
  	position:absolute;
  	background-color: white;
- 	top:500px;
+ 	top:400px;
  	left: 20px;
  	right: 20px;
  	text-align: center;
  	font-size: 40px;
- 	color :crimson; 
+ 	color :crimson;
  }
 
  .sample .test .textOnImage span
  {
  	font-weight:bold;
- 	font-size: 45px; 
+ 	font-size: 45px;
  }
 
 
