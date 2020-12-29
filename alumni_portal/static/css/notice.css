@@ -1,7 +1,11 @@
+body{
+	font-size: 15px;
+	font-family: 'Poppins', sans-serif;
+}
 .card
 {
 	width: 70%;
-	margin-top: 10%;
+	margin-top: 7%;
 	margin-bottom: 2%;
 	border: 2px grey solid;
 }
