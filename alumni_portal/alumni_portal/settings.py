@@ -146,5 +146,4 @@ SITE_ID = 1
 
 ACCOUNT_LOGOUT_ON_GET = "True"
 LOGIN_REDIRECT_URL = "login_success"
-
-
+LOGOUT_REDIRECT_URL = "bca_placement"
