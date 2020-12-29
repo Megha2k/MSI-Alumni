@@ -90,7 +90,7 @@
 
 
                         {% if user.is_authenticated %}
-                          <li><a href="/accounts/logout/?next='index.html'" class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto;">Sign Out</a></li>
+                          <li><a href="/accounts/logout/?next={% url 'index' %}" class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto;">Sign Out</a></li>
                         {% else %}
                           <li><a href="{% provider_login_url 'google' %}?next = {% url 'login_success' %}"class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto;">Sign In</a></li>
                         {% endif %}
