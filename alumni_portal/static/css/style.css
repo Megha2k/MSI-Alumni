@@ -398,10 +398,10 @@ a.navbar-brand {
 	/*animation-name: fadeInDown;*/
 	/*background: #fff;*/
 	/*z-index: 20;*/
-	
+
 }
 
-	
+
 
 .navbar-toggler {
 	border: 2px solid #f43866;
@@ -511,17 +511,18 @@ a.navbar-brand {
 	height: auto;
 	width: 100%;
 	position: relative;
+	padding-bottom:100px;
 }
  .sample .test img
  {
- 	padding-top: 60px;
+ 	padding-top: 100px;
  	width: 100%;
  }
  .sample .test .textOnImage
  {
  	position:absolute;
  	background-color: white;
- 	top:400px;
+ 	top:500px;
  	left: 20px;
  	right: 20px;
  	text-align: center;
