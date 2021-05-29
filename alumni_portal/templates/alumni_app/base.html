@@ -125,7 +125,7 @@
                 <div class="col-md-12 margin-bottom_30">
 				   <img src="{% static 'images/msialumni_logo.png' %}" style="width:20%" alt="#" />
 				</div>
-               <div class="col-xl-6 white_fonts">
+               <div class="col-xs-6 col-md-4 white_fonts">
                     <div class="row">
 					<div class="col-md-12 white_fonts margin-bottom_30" id="contact">
 					   <h3>Contact Us</h3>
@@ -169,7 +169,7 @@
                     </div>
                 </div>
 
-				 <div class="col-xl-6 white_fonts">
+				 <div class="col-xs-6 col-md-4 white_fonts">
 				    <div class="row">
 					   <div class="col-md-6">
 					     <div class="footer_blog footer_menu">
@@ -185,6 +185,46 @@
 					   </div>
 					</div>
 				 </div>
+             <!-- Contact Form -->
+        
+             <div class="col-xs-6 col-md-4">
+                <div class="card">
+                  <h5 class="card-header info-color white-text text-center py-4">
+                    <strong>Contact Form</strong>
+                  </h5>
+                  <div class="card-body">
+                    <form name="contact_form" class="text-center" action="" method="POST">
+                        {% csrf_token %}
+                      <div class="md-form mt-3">
+                        <input type="text" name="fname" id="materialContactFormFirstName" class="form-control" placeholder="First Name" required="required">
+                      </div>
+                      <div class="md-form mt-3">
+                        <input type="text" name="lname" id="materialContactFormLastName" class="form-control" placeholder="Last Name">
+                      </div>
+                      <div class="md-form mt-3">
+                        <input type="text" name="email" id="materialContactEmail" class="form-control" placeholder="Email Id" required="required">
+                      </div>
+                      <div>
+                        <!-- <br>
+                        <br>
+                        <br>
+-->                      </div>
+                      <div class="md-form mt-3">
+                        <label for="subject" id = "subjectLabel">Subject:</label><br>
+                        <textarea class="form-control" id="subject" name="subject" placeholder="..write here...." cols=40 rows=4 required="required"></textarea>
+                      </div>
+                      <br>
+                      <div id="SubmitButton">
+                      <input type="submit" name="contact_form" value="Submit" class="btn" id = "contactSubmitButton">
+                      </div>
+
+                    </form>
+                    
+                  </div>
+                </div>
+             </div>
+             <!-- CONTACT FORM END -->
+
 
             </div>
 
