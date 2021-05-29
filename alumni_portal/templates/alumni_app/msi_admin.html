@@ -254,6 +254,42 @@
 		</div>
 	</div>
 
+	# send an email form
+	<div class="email-box">
+		<div class="heading">
+				<h1>Email Notification</h1>
+			</div>
+		<form action="{% url 'sendemail' %}" method="POST">
+		{% csrf_token %}
+			<div class="text-box">
+				<textarea name="content" rows="8"  cols="20" name="email-content" placeholder="Enter your message here.." autofocus="autofocus" required="required"></textarea>
+			</div>
+			To :
+			<div class="chkbox">
+				<div class="box-option">
+				<input type="checkbox" name="emailarray[]" value="bca" id="bca">
+			    <label for="bca">BCA</label>
+			    </div>
+			    <div class="box-option">
+			    <input type="checkbox" name="emailarray[]" value="bba" id="bba">
+			    <label for="bba">BBA</label>
+				</div>
+			    <div class="box-option">
+			    <input type="checkbox" name="emailarray[]" value="bcom" id="bcom">
+			    <label for="bcom">B.Com</label>
+			    </div>
+			    <div class="box-option">
+			    <input type="checkbox" name="emailarray[]" value="bed" id="bed">
+			    <label for="bed">B.ED</label>
+			</div>
+			</div>
+
+			<div  class="submit">
+				<input type="submit" value="Send">
+			</div>
+		</form>
+	</div>
+
 	</center>
 
 {% endblock %}

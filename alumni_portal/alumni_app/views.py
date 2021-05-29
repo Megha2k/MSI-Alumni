@@ -7,12 +7,8 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 import pandas as pd
-
-
-@login_required
-def user_logout(request):
-	logout(request)
-	return HttpResponseRedirect("/homepage")
+from django.conf import settings
+from django.core.mail import send_mail
 
 def index(request):
 
@@ -22,24 +18,7 @@ def index(request):
     display_alumni_obj = display_alumni_model.objects.all()
     display_alumni_list = {"display_alumni_objs":display_alumni_obj}
 
-    if request.method == "POST":
-
-    	if 'login_form' in request.POST:
-
-    		username = request.POST["username"]
-    		password = request.POST["password"]
-
-    		user = authenticate(username=username, password=password)
-
-    		if user and user.is_staff:
-    			login(request,user)
-    			return HttpResponseRedirect("/msi_admin")
-
-    		else:
-    			return render(request,'alumni_app/index.html',{"status":"Invalid username or password!"})
-    else:
-    	return render(request, 'alumni_app/index.html',{"list_slideshow":slideshow_list,"list_display_alumni":display_alumni_list})
-
+    return render(request, 'alumni_app/index.html',{"list_slideshow":slideshow_list,"list_display_alumni":display_alumni_list})
 
 def bca_placement(request):
     placement_companies_obj = placement_companies_model.objects.all().filter(bca="yes").order_by('name')
@@ -224,3 +203,34 @@ def msi_admin(request):
         return render(request, 'alumni_app/msi_admin.html',{'bcom_students_form':form})
 
     return render(request, 'alumni_app/msi_admin.html',{"list_achievements":achievements_list,'notice_form':form_notice,'events_form':form_events,'display_alumni_form':form_display_alumni,'placement_companies_form':form_placement_companies,'grant_achievements_form':form_grant_achievements,'bca_students_form':form_bba_students,'bba_students_form':form_bca_students,'bed_students_form':form_bed_students,'bcom_students_form':form_bcom_students,'slideshow_form':form_slideshow})
+
+
+#send an email function
+def sendanemail(request):
+    if request.method == "POST":
+        emailone = request.POST.getlist('emailarray')
+        textone = request.POST.get('textone')
+        emailtwo = []
+        for i in emailone:
+            if i == "bca":
+                emailbca = bca_students_model.objects.values_list('Email')
+                emailtwo.append(emailbca)
+            elif i == "bba":
+                emailbba = bba_students_model.objects.values_list('Email')
+                emailtwo.append(emailbba)
+            elif i == "bed":
+                emailbed = bed_students_model.objects.values('Email')
+                emailtwo.append(emailbed)
+            elif i == "bcom":
+                emailbcom = bcom_students_model.objects.values_list('Email')
+                emailtwo.append(emailbcom)
+        send_mail(
+        "Hello MSI Alumni",
+        textone,
+        settings.EMAIL_HOST_USER,
+        emailtwo
+        )
+        return render(request, 'alumni_app/msi_admin.html',{'title' : 'send an email'})
+    else:
+        return render(request, 'alumni_app/msi_admin.html',{'title' : 'send an email'})
+

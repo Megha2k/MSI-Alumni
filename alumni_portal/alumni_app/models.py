@@ -45,7 +45,7 @@ class bca_students_model(models.Model):
 	fname = models.CharField(max_length=25, blank=True)
 	lname = models.CharField(max_length=25, blank=True)
 	rollno = models.PositiveIntegerField(unique=True, blank=True)
-	email = models.EmailField(max_length=25, default="", blank=True)
+	email = models.EmailField(max_length=35, default="", blank=True)
 	academic_yr = models.CharField(max_length=9, blank=True)
 	file = models.FileField(upload_to='alumni', default="", blank=True)
 
@@ -61,7 +61,7 @@ class bed_students_model(models.Model):
 	fname = models.CharField(max_length=25, blank=True)
 	lname = models.CharField(max_length=25, blank=True)
 	rollno = models.PositiveIntegerField(unique=True, blank=True)
-	email = models.EmailField(max_length=25, default="", blank=True)
+	email = models.EmailField(max_length=40, default="", blank=True)
 	academic_yr = models.CharField(max_length=9, blank=True)
 	file = models.FileField(upload_to='alumni', default="", blank=True)
 

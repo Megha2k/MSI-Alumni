@@ -72,7 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                
+
             ],
         },
     },
@@ -147,3 +147,12 @@ SITE_ID = 1
 ACCOUNT_LOGOUT_ON_GET = "True"
 LOGIN_REDIRECT_URL = "login_success"
 LOGOUT_REDIRECT_URL = "bca_placement"
+
+# my email snding variables
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "shubhambanna001@gmail.com"
+EMAIL_HOST_PASSWORD = "evjryavindnowlzu"
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
