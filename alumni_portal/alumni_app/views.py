@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from alumni_app.forms import notice_form,events_form,display_alumni_form,placement_companies_form,submit_achievements_form,grant_achievements_form,bca_students_form,bba_students_form,bed_students_form,bcom_students_form,slideshow_form
-from alumni_app.models import notice_model,events_model,display_alumni_model,placement_companies_model,achievements_model,bca_students_model,bba_students_model,bed_students_model,bcom_students_model,slideshow_model
+from alumni_app.models import (notice_model,events_model,display_alumni_model,placement_companies_model,achievements_model,
+    bca_students_model,bba_students_model,bed_students_model,bcom_students_model,slideshow_model, Contact)
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth import get_user_model
