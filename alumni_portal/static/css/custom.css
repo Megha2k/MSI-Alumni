@@ -1,34 +1,139 @@
 /** ADD YOUR AWESOME CODES HERE **/
  
- 
-  /*For Mobile Responsiveness*/
 
-  @media (max-width: 767px) {
-  .sample .test .textOnImage {
-      position: absolute;
-      background-color: white;
-      font-size: 10px;
-      top: 90px;
-      left: 20px;
-      right: 20px;
-      text-align: center;
-      /* font-size: 40px; */
-      color: crimson;
+ /*For Mobile Responsiveness*/
+
+ @media (max-width: 767px) {
+ .sample .test .textOnImage {
+     position: absolute;
+     background-color: white;
+     font-size: 10px;
+     top: 150px;
+     left: 20px;
+     right: 20px;
+     text-align: center;
+     /* font-size: 40px; */
+     color: crimson;
+ }
+ .sample .test img{
+    width: 100%;
+    height: 100%;
+ }
+ .sample .test .textOnImage span {
+    font-weight: bold;
+    font-size: 15px;
+}
+.layout_padding {
+    padding-top: 5px;
+    padding-bottom: 60px;
+}
+
+
+.layout_padding p {
+    margin-top: 5px;
+    margin-bottom: 1rem;
+    font-size: 15px;
+    font-weight: 100;
+    line-height: normal;
+}
+#about img{
+    width: 30%;
+    height: 30%;
+}
+
+#demo .img-responsive {
+    margin: 10px 0;
+    width: 400px;
+    height: 100px;
+}
+
+#cardFormTitle{
+    margin-top: 1px;
+    margin-bottom: -10px;
+}
+
+ }
+
+ /*MOBILE RESONSIVE CSS CODE END*/
+
+
+#moreImages{
+    border-radius: 0px;
+    display: block;
+}
+
+
+ #cardFormTitle{
+    font-family: 'FontAwesome';
+    color: white;
+    background-image: url('/static/images/contactform_bg1.jpg/');
+
+ }
+ 
+
+
+ #contact_form input{
+
+    height: calc(2rem + 0.5px);
+
+ }
+
+#formContainerDiv {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0.3rem 1rem 1rem 1rem;
+}
+ .footer-boxer{
+    padding: 30px 0;
+ }
+/* LAPTOP RESPONSIVE CSS ENDS HERE */
+
+
+
+
+
+  /* only small tablets */
+ @media (min-width: 768px) and (max-width: 991px) {
+    #cardFormTitle{
+    margin-top: -100px;
+    margin-bottom: -10px;
+}
+#about img{
+    width: 30%;
+    height: 30%;
+}
+
+ }
+
+ /* only small desktops */
+ /* tablets */
+  @media (min-width: 992px) and (max-width: 1190px) {
+    #cardFormTitle{
+    margin-top: -129px;
+    margin-bottom: -40px;
+}
+#about img{
+    padding-bottom: 30px;
+}
+
   }
-  .sample .test .textOnImage span {
-     font-weight: bold;
-     font-size: 15px;
+
+
+
+/*FOR LAPTOPS OF NORMAL SIZES and Desktops*/
+   @media (min-width: 1191px){
+    #cardFormTitle{
+    margin-top: -150px;
+    margin-bottom: -20px;
+    }
+    .sample .test img{
+        padding-top: 100px;
+    }
+
+    #about img{
+        padding-bottom: 30px;
+    }
+
+
  }
- .layout_padding {
-     padding-top: 5px;
-     padding-bottom: 60px;
- }
- .layout_padding p {
-     margin-top: 5px;
-     margin-bottom: 1rem;
-     font-size: 15px;
-     font-weight: 100;
-     line-height: normal;
- }
-  }
-  
+ 

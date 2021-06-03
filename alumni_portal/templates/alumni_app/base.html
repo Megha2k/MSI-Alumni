@@ -188,12 +188,12 @@
              <!-- Contact Form -->
         
              <div class="col-xs-6 col-md-4">
-                <div class="card">
+                <div class="card" id="cardFormTitle">
                   <h5 class="card-header info-color white-text text-center py-4">
                     <strong>Contact Form</strong>
                   </h5>
-                  <div class="card-body">
-                    <form name="contact_form" class="text-center" action="" method="POST">
+                  <div class="card-body" id="formContainerDiv">
+                    <form name="contact_form" id="contact_form" class="text-center" action="" method="POST">
                         {% csrf_token %}
                       <div class="md-form mt-3">
                         <input type="text" name="fname" id="materialContactFormFirstName" class="form-control" placeholder="First Name" required="required">
@@ -207,8 +207,9 @@
                       <div>
                         <!-- <br>
                         <br>
-                        <br>
--->                      </div>
+                        <br>-->
+                            
+                      </div>
                       <div class="md-form mt-3">
                         <label for="subject" id = "subjectLabel">Subject:</label><br>
                         <textarea class="form-control" id="subject" name="subject" placeholder="..write here...." cols=40 rows=4 required="required"></textarea>
