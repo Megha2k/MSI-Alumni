@@ -219,22 +219,22 @@ def msi_admin(request):
 #send an email function
 def sendanemail(request):
     if request.method == "POST":
-        emailone = request.POST.getlist('emailarray')
-        textone = request.POST.get('textone')
-        emailtwo = []
+        emailone = request.POST.getlist('emailarray[]')
+        textone = request.POST.get('content')
+        emailtwo = ["shubhamrathore514@gmail.com"]
         for i in emailone:
             if i == "bca":
-                emailbca = bca_students_model.objects.values_list('Email')
-                emailtwo.append(emailbca)
+                emailbca = bca_students_model.objects.values_list('email', flat=True)
+                emailtwo.extend(emailbca)
             elif i == "bba":
-                emailbba = bba_students_model.objects.values_list('Email')
-                emailtwo.append(emailbba)
+                emailbba = bba_students_model.objects.values_list('email', flat=True)
+                emailtwo.extend(emailbba)
             elif i == "bed":
-                emailbed = bed_students_model.objects.values('Email')
-                emailtwo.append(emailbed)
+                emailbed = bed_students_model.objects.values_list('email', flat=True)
+                emailtwo.extend(emailbed)
             elif i == "bcom":
-                emailbcom = bcom_students_model.objects.values_list('Email')
-                emailtwo.append(emailbcom)
+                emailbcom = bcom_students_model.objects.values_list('email', flat=True)
+                emailtwo.extend(emailbcom)
         send_mail(
         "Hello MSI Alumni",
         textone,
