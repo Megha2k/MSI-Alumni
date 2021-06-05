@@ -245,3 +245,16 @@ def sendanemail(request):
     else:
         return render(request, 'alumni_app/msi_admin.html',{'title' : 'send an email'})
 
+
+def gallery(request):
+    slideshow_obj = slideshow_model.objects.all()
+    slideshow_list = {'slideshow_obj':slideshow_obj}
+    return render(request, 'alumni_app/gallery.html',{"list_slideshow":slideshow_list})
+
+
+def allAlumni(request):
+    display_alumni_obj = display_alumni_model.objects.all()
+    display_alumni_list = {"display_alumni_objs":display_alumni_obj}
+    return render(request, 'alumni_app/all_alumni.html',{"list_display_alumni":display_alumni_list})
+
+

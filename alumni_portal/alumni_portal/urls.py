@@ -24,4 +24,6 @@ urlpatterns = [
     path('alumni/', views.alumni, name='alumni'),
     url(r'^homepage',views.index,name='homepage'),
     path('send/', views.sendanemail, name="sendemail"),
+    url(r'^gallery',views.gallery,name="gallery"),
+    url(r'^allAlumni',views.allAlumni,name="allAlumni"),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
