@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends "alumni_app/base.html" %}
+{% load static %}
+{% block base_body_block %}
+<div class="section layout_padding" style="margin-top:10%;margin-bottom: 10%;">
+
+     <h2 style="color: crimson; margin-left:5rem;">OUR ALUMNI</h2>
+
+        <div class="row  margin-top_30" style="margin-left: 0.5rem;">
+             <div class="col-lg-12 margin-top_30">
+                {% for key,value in list_display_alumni.items %}
+
+                    <!-- The slideshow -->
+
+                    <div class="row" id="alumniRow">
+
+                     {% for i in value %}
+
+                        <div class="col">
+                            <div class="full">
+                               <div class="full team_member_img text_align_center">
+                                 <img class = "our_alumni_images" src="/media/{{i.photo}}" alt="#" />
+                                 <div class="social_icon_team">
+                                    <ul class="social_icon">
+                                        <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                 </div>
+                               </div>
+                               <div class="full text_align_center">
+                                 <h3>{{i.name}}</h3>
+                               </div>
+                               <div class="full text_align_center">
+                                 <p>{{i.description}}</p>
+                               </div>
+
+                            </div>
+
+                        </div>
+                                    
+
+                    {% endfor %}
+
+                    </div>
+                        
+                {% endfor %}
+             </div>
+         </div>
+	
+    </div>
+
+{% endblock %}

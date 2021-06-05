@@ -52,6 +52,32 @@
     margin-bottom: -10px;
 }
 
+/*View all alumni Button*/
+#allImages{
+    width: auto;
+    margin-left: none;
+    margin-right: none;
+    
+}
+/**/
+#OurAlumni{
+    display: none;
+}
+#OurAlumni_mobile{
+    display: contents;
+}
+#gallery{
+    display: none;
+}
+
+#gallery_mobile{
+    display: contents;
+}
+
+img#gallery_image_mobile{
+    width: 29rem;
+}
+
  }
 
  /*MOBILE RESONSIVE CSS CODE END*/
@@ -66,7 +92,7 @@
  #cardFormTitle{
     font-family: 'FontAwesome';
     color: white;
-    background-image: url('/static/images/contactform_bg1.jpg/');
+    background-image: url('/static/images/contactForm_bg1.jpg/');
 
  }
  
@@ -86,6 +112,21 @@
  .footer-boxer{
     padding: 30px 0;
  }
+
+
+#allImages{
+    font-family: 'FontAwesome';
+    font-size: 20px;
+    display: block;
+    padding: 0.5rem 1rem;
+    text-align: -webkit-center;
+    margin-left: 30%;
+    margin-right: 30%;
+
+}
+
+
+
 /* LAPTOP RESPONSIVE CSS ENDS HERE */
 
 
@@ -103,6 +144,33 @@
     height: 30%;
 }
 
+#OurAlumni{
+    display: contents;
+}
+#OurAlumni_mobile{
+    display: none;
+}
+#gallery{
+    display: contents;
+}
+#gallery_mobile{
+    display: none;
+}
+.sample .test .textOnImage {
+    position: absolute;
+    background-color: white;
+    top: 270px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    font-size: 40px;
+    color: crimson;
+}
+.sample .test .textOnImage span {
+    font-weight: bold;
+    font-size: 45px;
+}
+
  }
 
  /* only small desktops */
@@ -114,6 +182,18 @@
 }
 #about img{
     padding-bottom: 30px;
+}
+#OurAlumni{
+    display: contents;
+}
+#OurAlumni_mobile{
+    display: none;
+}
+#gallery{
+    display: contents;
+}
+#gallery_mobile{
+    display: none;
 }
 
   }
@@ -133,6 +213,24 @@
     #about img{
         padding-bottom: 30px;
     }
+
+    #mobile_alumni{
+    display: none;
+ }
+#OurAlumni{
+    display: contents;
+}
+
+#OurAlumni_mobile{
+    display: none;
+}
+#gallery{
+    display: contents;
+}
+#gallery_mobile{
+    display: none;
+}
+
 
 
  }

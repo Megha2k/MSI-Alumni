@@ -57,10 +57,11 @@
                     </div>
                 </div>
             </div>
-			<div class="row margin-top_30">
+            <!-- GALLERY IMAGE SLIDER FOR ALL DEVICES EXCEPT MOBILE -->
+            <div class="row margin-top_30" id="gallery">
                 <div class="col-lg-12 margin-top_30">
                     {% for key,value in list_slideshow.items %}
-                    <div id="demo" class="carousel slide" data-ride="carousel">
+                    <div id="gallerySlides" class="carousel slide" data-ride="carousel">
 
                         <!-- The slideshow -->
                         <div class="carousel-inner">
@@ -70,26 +71,63 @@
                                   <img src='/media/{{i.photo}}' class="card-img-top" alt="..." width="300" height="200">
                               </div>
                               {% if forloop.counter|divisibleby:3 and forloop.counter > 0  and not forloop.last  %}
-                               </div>
+                          </div>
                                <div class="carousel-item">
                               {% endif %}
 
                               {% endfor %}
                                </div>
-                        </div>
-                        
-                        <!-- Left and right controls -->
-                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        </div> 
+
+                        <!-- Left and right controls --> 
+                        <a class="carousel-control-prev" href="#gallerySlides" data-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </a>
-                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <a class="carousel-control-next" href="#gallerySlides" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>
                     </div>
-                    {% endfor %}                    
+                    {% endfor %}
                 </div>
+           </div>
+        <!-- END -->
 
-            </div>
+                <!-- GAllERY MOBILE -->
+        <div class="row margin-top_30" id="gallery_mobile">
+               <div class="col-lg-12 margin-top_30">
+                   {% for key,value in list_slideshow.items %}
+                   <div id="gallerymobile" class="carousel slide" data-ride="carousel">
+
+                       <!-- The slideshow -->
+                       <div class="carousel-inner">
+                         <div class="carousel-item active">
+                             {% for i in value %}
+                             <div style="display:inline-block;width:32%;padding-left:2%;padding-right:2%">
+                                 <img id="gallery_image_mobile"src='/media/{{i.photo}}' class="card-img-top" alt="..." width="300" height="200">
+                             </div>
+                             {% if forloop.counter|divisibleby:1 and forloop.counter > 0  and not forloop.last  %}
+                         </div>
+                              <div class="carousel-item">
+                             {% endif %}
+
+                             {% endfor %}
+                              </div>
+                       </div>
+                       <!-- Left and right controls -->
+                       <a class="carousel-control-prev" href="#gallerymobile" data-slide="prev">
+                           <span class="carousel-control-prev-icon"></span>
+                       </a>
+                       <a class="carousel-control-next" href="#gallerymobile" data-slide="next">
+                           <span class="carousel-control-next-icon"></span>
+                       </a>
+                   </div>
+                   {% endfor %}
+               </div>
+          </div>
+          <!-- END -->
+
+          <br>
+               <li><a id="allImages"href="{% url 'gallery' %}"class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto; text-align: center;">ALL IMAGES</a></li>
         </div>
     </div>
 	<!-- end section -->
@@ -109,58 +147,135 @@
                     </div>
                 </div>
             </div>
-			<div class="row margin-top_30">
+<!-- Alumni Display Slider Code -->
+<!-- For Laptops, Desktop and tabs -->
+<div class="row margin-top_30" id="OurAlumni">
                 <div class="col-lg-12 margin-top_30">
-                    <div id="team_slider" class="carousel slide" data-ride="carousel">
+                    {% for key,value in list_display_alumni.items %}
+                    <div id="demoalumni" class="carousel slide" data-ride="carousel">
 
                         <!-- The slideshow -->
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    {% for key,value in list_display_alumni.items %}
-                                    {% for i in value %}
-                                    <div class="col-lg-4 col-md-4 col-sm-12">
+
+                          <div class="carousel-item active">
+                            <div class="row">
+
+                              {% for i in value %}
+                              <div class="col-lg-4 col-md-4 col-sm-12">
                                         <div class="full">
-										   <div class="full team_member_img text_align_center">
-										     <img src="/media/{{i.photo}}" alt="#" />
-											 <div class="social_icon_team">
-											    <ul class="social_icon">
+                                           <div class="full team_member_img text_align_center">
+                                             <img class = "our_alumni_images" src="/media/{{i.photo}}" alt="#" />
+                                             <div class="social_icon_team">
+                                                <ul class="social_icon">
                                                     <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                                 </ul>
                                              </div>
-										   </div>
-										   <div class="full text_align_center">
-										     <h3>{{i.name}}</h3>
-										   </div>
-										   <div class="full text_align_center">
-										     <p>{{i.description}}</p>
-										   </div>
-										</div>
-                                    </div>
-                                    {% endfor %}
-                                    {% endfor %}
+                                           </div>
+                                           <div class="full text_align_center">
+                                             <h3>{{i.name}}</h3>
+                                           </div>
+                                           <div class="full text_align_center">
+                                             <p>{{i.description}}</p>
+                                           </div>
+
+                                        </div>
+
                                 </div>
-                            </div>
+                                {% if forloop.counter|divisibleby:3 and forloop.counter > 0  and not forloop.last  %}
+                                </div>
+                              
+                          </div>
+                               <div class="carousel-item">
+                                <div class="row">
+                              {% endif %}
+
+                              {% endfor %}
+                          </div>
+                               </div>
                         </div>
-
-                        <div class="bullets">
-						  <!-- Indicators -->
-                            <ul class="carousel-indicators">
-                                <li data-target="#team_slider" data-slide-to="0" class="active"></li>
-                                <li data-target="#team_slider" data-slide-to="1"></li>
-                            </ul>
-						</div>
-
+                        <!-- Left and right controls -->
+                        <a class="carousel-control-prev" href="#demoalumni" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demoalumni" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
                     </div>
+                    {% endfor %}
                 </div>
+           </div>
+<!-- END -->
 
-            </div>
+<!-- Alumni Display For Mobile  -->
+<div class="row margin-top_30" id="OurAlumni_mobile">
+                <div class="col-lg-12 margin-top_30">
+                    {% for key,value in list_display_alumni.items %}
+                    <div id="demoalumni_mobile" class="carousel slide" data-ride="carousel">
+
+                        <!-- The slideshow -->
+                        <div class="carousel-inner">
+
+                          <div class="carousel-item active">
+                            <div class="row">
+
+                              {% for i in value %}
+                              <div class="col-lg-4 col-md-4 col-sm-12">
+                                        <div class="full">
+                                           <div class="full team_member_img text_align_center">
+                                             <img class = "our_alumni_images" src="/media/{{i.photo}}" alt="#" />
+                                             <div class="social_icon_team">
+                                                <ul class="social_icon">
+                                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                </ul>
+                                             </div>
+                                           </div>
+                                           <div class="full text_align_center">
+                                             <h3>{{i.name}}</h3>
+                                           </div>
+                                           <div class="full text_align_center">
+                                             <p>{{i.description}}</p>
+                                           </div>
+
+                                        </div>
+
+                                </div>
+                                {% if forloop.counter|divisibleby:1 and forloop.counter > 0  and not forloop.last  %}
+                                </div>
+                              
+                          </div>
+                               <div class="carousel-item">
+                                <div class="row">
+                              {% endif %}
+
+                              {% endfor %}
+                          </div>
+                               </div>
+                        </div>
+                        <!-- Left and right controls -->
+                        <a class="carousel-control-prev" href="#demoalumni_mobile" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demoalumni_mobile" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+           </div>
+<!-- END -->
+                   <br>
+                   <li><a id="allImages"href="{% url 'allAlumni' %}" class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto; text-align: center;">VIEW ALL ALUMNI</a></li>
+
+            <!-- alumni display divs end --> 
         </div>
     </div>
-	</div>
+	
 	<!-- end section -->
 
 {% endblock %}
