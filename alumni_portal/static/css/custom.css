@@ -92,7 +92,8 @@ img#gallery_image_mobile{
  #cardFormTitle{
     font-family: 'FontAwesome';
     color: white;
-    background-image: url('/static/images/contactForm_bg1.jpg/');
+    /*background-image: url('/static/images/contactForm_bg1.jpg/');*/
+    background-image: url('/static/images/contactbg.jpg/');
 
  }
  
@@ -123,6 +124,12 @@ img#gallery_image_mobile{
     margin-left: 30%;
     margin-right: 30%;
 
+}
+
+img.our_alumni_images:hover{
+    background: rgba(244,56,102,0.7);
+    opacity: 0.6;
+    transition: ease all 0.2s;
 }
 
 

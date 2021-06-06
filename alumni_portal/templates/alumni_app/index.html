@@ -164,15 +164,17 @@
                               <div class="col-lg-4 col-md-4 col-sm-12">
                                         <div class="full">
                                            <div class="full team_member_img text_align_center">
+                                            <a href="{% url 'alumniDetail' pk=i.pk %}">
                                              <img class = "our_alumni_images" src="/media/{{i.photo}}" alt="#" />
-                                             <div class="social_icon_team">
+                                            </a>
+                                             <!-- <div class="social_icon_team">
                                                 <ul class="social_icon">
                                                     <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                                 </ul>
-                                             </div>
+                                             </div> -->
                                            </div>
                                            <div class="full text_align_center">
                                              <h3>{{i.name}}</h3>
@@ -225,15 +227,17 @@
                               <div class="col-lg-4 col-md-4 col-sm-12">
                                         <div class="full">
                                            <div class="full team_member_img text_align_center">
+                                            <a href="{% url 'alumniDetail' pk=i.pk %}">
                                              <img class = "our_alumni_images" src="/media/{{i.photo}}" alt="#" />
-                                             <div class="social_icon_team">
+                                            </a>
+                                             <!-- <div class="social_icon_team">
                                                 <ul class="social_icon">
                                                     <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                                 </ul>
-                                             </div>
+                                             </div> -->
                                            </div>
                                            <div class="full text_align_center">
                                              <h3>{{i.name}}</h3>
