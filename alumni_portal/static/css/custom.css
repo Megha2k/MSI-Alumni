@@ -1,5 +1,5 @@
 /** ADD YOUR AWESOME CODES HERE **/
- 
+
 
  /*For Mobile Responsiveness*/
 
@@ -57,7 +57,7 @@
     width: auto;
     margin-left: none;
     margin-right: none;
-    
+
 }
 /**/
 #OurAlumni{
@@ -92,11 +92,11 @@ img#gallery_image_mobile{
  #cardFormTitle{
     font-family: 'FontAwesome';
     color: white;
-    /*background-image: url('/static/images/contactForm_bg1.jpg/');*/
+    background-color: black;
     background-image: url('/static/images/contactbg.jpg/');
 
  }
- 
+
 
 
  #contact_form input{
@@ -241,4 +241,4 @@ img.our_alumni_images:hover{
 
 
  }
- 
+
