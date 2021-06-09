@@ -1,17 +1,18 @@
-.card
+.card1
 {
-	width: 25rem;
+	idth: 25rem;
 	display: inline-block;
 	margin-top: 7%;
 	margin-bottom: 2%;
 	margin-left: 2%;
 	margin-right:2%;
-	border: 2px blue solid;
+	border-radius: 9px;
+	background-image:linear-gradient(to right, hotpink,whitesmoke) ;
+	box-shadow: 7px 8px pink;
 }
-.card-header
+.card-header1
 {
-	background-color: #18a6f2;
-	border: 1px blue solid;
+	border: none;
 }
 
 .list-group-item

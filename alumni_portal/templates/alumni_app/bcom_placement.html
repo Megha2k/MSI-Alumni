@@ -5,13 +5,14 @@
 <!-- everything in this block will inherit from base.html -->
 <link rel="stylesheet" type="text/css" href="{% static 'css/placement.css' %}">
 
-	<center><h3><b>BCom Placement</b></h3></center>
+	<center style="margin-top: 10%;font-style: American Typewriter, serif;color: white;background-image: radial-gradient( black, slategrey);margin-left: 50px; margin-right: 50px;border-radius: 20px;"><h1><b>BCcom Placement</b></h1></center>
+
 
     <center>
 	{% for i in placement_companies_obj %}
-	<div class="card">
-  		<div class="card-header"><b><h4>
-  		    <button id="company_details_show_hide_btn" onclick="company_details_show_hide_{{forloop.counter}}()" style="background-color:#18a6f2;padding:0px;">{{ i.name }}</button>
+	<div class="card1">
+  		<div class="card-header1"><b><h4>
+  		    <button id="company_details_show_hide_btn" onclick="company_details_show_hide_{{forloop.counter}}()" style="background-image: linear-gradient(to right,hotpink,whitesmoke);border-radius: 5px;padding:10px;border: none;">{{ i.name }}</button>
   		</h4></b></div>
 	</div>
 
