@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends "alumni_app/base.html" %}
+{% load static %}
+{% block base_body_block %}
+<div class="section layout_padding" style="margin-top:10%;margin-bottom: 10%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="heading_main text_align_left">
+
+						   <div class="right" id="h2Gallery">
+
+                            <h2 style="color: crimson; margin-left:1px;">Gallery </h2>
+
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+			<div class="row margin-top_30">
+                <div class="col-lg-12 margin-top_30">
+                    {% for key,value in list_slideshow.items %}
+                    
+
+                        <!-- The slideshow -->
+                        
+                        
+                              {% for i in value %}
+                              <div style="display:inline-block;width:32%; padding-left: 5%;padding-bottom: 2%;">
+                                  <img class= " img-responsive "src='/media/{{i.photo}}' class="card-img-top" alt="..." width="300" height="200">
+                              </div>
+                              {% endfor %}
+                               
+                       
+                      
+                   
+                    {% endfor %}
+                </div>
+           </div>
+
+        </div>
+    </div>
+
+{% endblock %}

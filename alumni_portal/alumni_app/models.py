@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.urls import reverse
 
 class notice_model(models.Model):
 	name = models.CharField(max_length=40, blank=True)
@@ -18,6 +19,13 @@ class display_alumni_model(models.Model):
 	name = models.CharField(max_length=25, blank=True)
 	description = models.TextField(max_length=250, blank=True)
 	photo = models.ImageField(upload_to='slideshow', default="", blank=True)
+
+	def get_absolute_url(self):
+		return reverse("alumniDetail",kwargs={'pk':self.pk})
+
+	def __str__(self):
+		return self.name
+
 
 month_list = [('january','January'),('february','February'),('march','March'),('april','April'),('may','May'),('june','June'),('july','July'),('august','August'),('september','September'),('october','October'),('november','November'),('december','December')]
 check_list = [('yes','yes'),('no','no'),('unknown','unknown')]

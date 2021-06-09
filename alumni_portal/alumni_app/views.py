@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from alumni_app.forms import notice_form,events_form,display_alumni_form,placement_companies_form,submit_achievements_form,grant_achievements_form,bca_students_form,bba_students_form,bed_students_form,bcom_students_form,slideshow_form
+
+from alumni_app.forms import (notice_form,events_form,display_alumni_form,placement_companies_form,submit_achievements_form,
+                             grant_achievements_form,bca_students_form,bba_students_form,bed_students_form,bcom_students_form,slideshow_form)
+
 from alumni_app.models import (notice_model,events_model,display_alumni_model,placement_companies_model,achievements_model,
-    bca_students_model,bba_students_model,bed_students_model,bcom_students_model,slideshow_model, Contact)
+                               bca_students_model,bba_students_model,bed_students_model,bcom_students_model,slideshow_model, Contact)
+
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth import get_user_model
@@ -10,6 +14,7 @@ from django.contrib.auth.decorators import login_required
 import pandas as pd
 from django.conf import settings
 from django.core.mail import send_mail
+from django.views.generic import (TemplateView, ListView, DetailView )
 
 def index(request):
 
@@ -244,4 +249,28 @@ def sendanemail(request):
         return render(request, 'alumni_app/msi_admin.html',{'title' : 'send an email'})
     else:
         return render(request, 'alumni_app/msi_admin.html',{'title' : 'send an email'})
+
+
+def gallery(request):
+    slideshow_obj = slideshow_model.objects.all()
+    slideshow_list = {'slideshow_obj':slideshow_obj}
+    return render(request, 'alumni_app/gallery.html',{"list_slideshow":slideshow_list})
+
+
+
+class AlumniListView(ListView):
+    
+    model = display_alumni_model
+    template_name = "alumni_app/display_alumni_list.html"
+    def get_context_data(self,**kwargs):
+        display_alumni_obj = display_alumni_model.objects.all()
+        display_alumni_list = {"list_display_alumni":display_alumni_obj}
+        return display_alumni_list
+    
+    
+
+class AlumniDetailView(DetailView):
+    model = display_alumni_model
+    template_name = "alumni_app/display_alumni_detail.html"
+
 
