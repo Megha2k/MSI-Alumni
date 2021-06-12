@@ -5,7 +5,7 @@ from alumni_app.forms import (notice_form,events_form,display_alumni_form,placem
                              grant_achievements_form,bca_students_form,bba_students_form,bed_students_form,bcom_students_form,slideshow_form)
 
 from alumni_app.models import (notice_model,events_model,display_alumni_model,placement_companies_model,achievements_model,
-                               bca_students_model,bba_students_model,bed_students_model,bcom_students_model,slideshow_model, Contact)
+                               bca_students_model,bba_students_model,bed_students_model,bcom_students_model,slideshow_model)
 
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
@@ -24,15 +24,15 @@ def index(request):
     display_alumni_obj = display_alumni_model.objects.all()
     display_alumni_list = {"display_alumni_objs":display_alumni_obj}
 
-    if request.method == "POST":
-        if 'contact_form' in request.POST:
-            fname = request.POST["fname"]
-            lname = request.POST['lname']
-            email = request.POST['email']
-            subject = request.POST['subject']
-            data = Contact(fname=fname,lname=lname,email=email,subject=subject)
-            data.save()
-            return render(request,'alumni_app/contact_form_redirect.html')
+    # if request.method == "POST":
+    #     if 'contact_form' in request.POST:
+    #         fname = request.POST["fname"]
+    #         lname = request.POST['lname']
+    #         email = request.POST['email']
+    #         subject = request.POST['subject']
+    #         data = Contact(fname=fname,lname=lname,email=email,subject=subject)
+    #         data.save()
+    #         return render(request,'alumni_app/contact_form_redirect.html')
 
     return render(request, 'alumni_app/index.html',{"list_slideshow":slideshow_list,"list_display_alumni":display_alumni_list})
 
