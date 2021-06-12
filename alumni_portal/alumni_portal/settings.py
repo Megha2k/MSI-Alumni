@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+
+    'chat',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -79,6 +82,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'alumni_portal.wsgi.application'
+ASGI_APPLICATION = 'alumni_portal.asgi.application'
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
 
 
 # Database

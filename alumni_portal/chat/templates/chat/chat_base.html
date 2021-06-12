@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<!-- Basic -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- ONLINE BOOTRAP LINK VERSION 4.1.3 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body id="base" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+    <!-- Start header -->
+    <header class="top-header">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><!--<img src="img/logo.png" alt="image">-->ALUMNI Association<br><p>Maharaja Surajmal Institute</p></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link active" href="{% url 'index' %}">Home</a></li>
+                        <li><a class="nav-link" href="{% url 'index' %}#about">About</a></li>
+                        <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">
+                             Placement
+                           </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <a class="dropdown-item" href="{% url 'bca_placement' %}">BCA</a>
+                             <a class="dropdown-item" href="#">BBA</a>
+                             <a class="dropdown-item" href="#">B.Com</a>
+                             <a class="dropdown-item" href="#">B.Ed</a>
+                             <div class="dropdown-divider"></div>
+
+                           </div>
+                        </li>
+                        <li><a class="nav-link" href="{% url 'achievements' %}">Achievements</a></li>
+                        <li><a class="nav-link" href="{% url 'events' %}">Events</a></li>
+                        <li><a class="nav-link" href="{% url 'notice' %}">Notices</a></li>
+                        <!-- <li><a class="nav-link" href="#">Placement</a></li> -->
+
+                    <li><a class="nav-link" href="#contact">Contact us</a></li>
+                    <li><a class="nav-link" href="{% url 'chat:SelectChatRoom' %}">Chat</a></li>
+
+                        <!-- <li><a class="nav-link active" style="background:#f2184f;color:#fff;" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign In</a></li> -->
+
+
+                        {% if user.is_authenticated %}
+                          <li><a href="/accounts/logout/?next={% url 'index' %}" class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto;">Sign Out</a></li>
+                        {% else %}
+                          <li><a href="#"class="nav-link active" style="background:#f2184f;color:#fff;" style="width:auto;">Sign In</a></li>
+                        {% endif %}
+
+
+
+                    </ul>
+
+            </div>
+        </nav>
+
+       
+            </div>
+        </nav>
+
+    </header>
+    <!-- End header -->
+
+
+  <div>
+    {% block base_body_block %}
+    <!-- Everything outside of this block will be inherited in all files that extend base.html -->
+    {% endblock %}
+  </div>
+
+
+
+
+<!-- ONLINE LINK FOR BOOTSTRAP JS FILES AS WITHOUT THESE DROPDOWN IN NAVBAR WAS NOT WORKING version 4.1.3 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

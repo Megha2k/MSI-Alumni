@@ -1,0 +1,137 @@
+{% extends 'chat/chat_base.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+{% block base_body_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/chat_base.css' %}">
+
+    <section class="wrapper">
+        <div class="container-fostrap">
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                            
+                        <div class="col-lg">
+                            <div class="card" id="roomTitleCard">
+                                <div class="card-content">
+                                    <h4 class="card-title" id="room_title">
+                                        <a href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html"><span>{{ room_name }}</span> Chat Room
+                                      </a>
+                                    </h4>
+                                    <p class="">
+                                        Have a doubt? No problem, ask it here!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">    
+                        <div class="col-lg">
+                            <div class="card" id="messagesCard">
+                                <div class="card-content">
+                                    <div class="">
+                                        <div id="chat-messages" style="max-height: 150px; min-height: 100px; overflow-y: scroll;">
+                                            {% for m in messages %}
+                                             <b>{{ m.username }}</b>:{{ m.content }}<br>
+                                             <hr>
+                                         {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">    
+                        <div class="col-lg">
+                            <div class="input-group mb-3">
+                              <input type="text" class="form-control" placeholder="Type your messages here" aria-label="Type your messages here" aria-describedby="button-addon2" id="chat-message-input">
+                              <div class="input-group-append" style="background-color:#E60026;color: white;">
+                                <button class="btn btn-outline-secondary" type="button" id="chat-message-submit" style="background-color:#E60026;color: white;">Submit
+                                </button>
+                              </div>
+                            </div>
+                            <h4>Your Username : {{ username }}</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    {{ room_name|json_script:"json-roomname" }}
+    {{ username|json_script:"json-username" }}
+
+     <script>
+         function scrollToBottom() {
+             let objDiv = document.getElementById("chat-messages");
+             objDiv.scrollTop = objDiv.scrollHeight;
+         }
+
+         scrollToBottom();
+
+         const roomName = JSON.parse(document.getElementById('json-roomname').textContent);
+         const userName = {{ username }}
+
+         const chatSocket = new WebSocket(
+             'ws://'
+             + window.location.host
+             + '/ws/'
+             + roomName
+             + '/'
+         );
+
+         chatSocket.onmessage = function(e) {
+             console.log('onmessage');
+
+             const data = JSON.parse(e.data);
+
+             if (data.message) {
+                 document.querySelector('#chat-messages').innerHTML += ('<b>' + data.username + '</b>: ' + data.message + '<br>');
+             } else {
+                 alert('The message is empty!');
+             }
+
+             scrollToBottom();
+         };
+
+         chatSocket.onclose = function(e) {
+             console.log('The socket close unexpectadly');
+         };
+
+
+         document.querySelector('#chat-message-input').focus();
+         document.querySelector('#chat-message-input').onkeyup = function(e) {
+             if (e.keyCode === 13) {  // enter, return
+                 document.querySelector('#chat-message-submit').click();
+             }
+         };
+
+         document.querySelector('#chat-message-submit').onclick = function(e) {
+             const messageInputDom = document.querySelector('#chat-message-input');
+             const message = messageInputDom.value;
+
+             if( !!message){
+
+                chatSocket.send(JSON.stringify({
+                 'message': message,
+                 'username': userName,
+                 'room': roomName
+             }));
+
+             messageInputDom.value = '';
+
+             }
+
+             
+         };
+     </script>
+
+{% endblock %}

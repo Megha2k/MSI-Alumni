@@ -1,0 +1,66 @@
+{% extends 'chat/chat_base.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+{% block base_body_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/chat_base.css' %}">
+
+    <section class="wrapper">
+        <div class="container-fostrap">
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                            
+                        <div class="col-lg">
+                            <div class="card" id="SelectRoomTitleCard">
+                                <div class="card-content">
+                                    <h4 class="card-title" id="room_title">
+                                        <a>Chat Rooms </a>
+                                    </h4>
+                                    <p class="">
+                                        Select a chat room to connect with your peers!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">    
+                        <div class="col-lg">
+                            <div class="input-group mb-3">
+                              <select class="custom-select" id="room-name-input">
+                                <option disabled="true">Select Chat Room...</option>
+                                <option value="bca">BCA</option>
+                                <option value="bba">BBA</option>
+                                <option value="bcom">B.Com</option>
+                                <option value="bed">B.Ed</option>
+                              </select>
+                              <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" id="room-name-submit">Submit
+                                </button>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        document.querySelector('#room-name-input').focus();
+        
+
+        document.querySelector('#room-name-submit').onclick = function(e) {
+            var roomName = document.querySelector('#room-name-input').value;
+            var userName = {{ username }}
+
+            window.location.replace(roomName + '/?username=' + userName);
+        };
+    </script>
+{% endblock %}

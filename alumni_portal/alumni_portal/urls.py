@@ -10,6 +10,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')), # GOOGLE SIGN IN
+    path('chat/', include('chat.urls'),name='chat'), #For Chat
     url(r'^alumni_app/', include('alumni_app.urls')),
     url(r'^$', views.index, name='index'),
     path('bca_placement/', views.bca_placement, name='bca_placement'),
