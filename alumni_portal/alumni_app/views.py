@@ -24,15 +24,15 @@ def index(request):
     display_alumni_obj = display_alumni_model.objects.all()
     display_alumni_list = {"display_alumni_objs":display_alumni_obj}
 
-    # if request.method == "POST":
-    #     if 'contact_form' in request.POST:
-    #         fname = request.POST["fname"]
-    #         lname = request.POST['lname']
-    #         email = request.POST['email']
-    #         subject = request.POST['subject']
-    #         data = Contact(fname=fname,lname=lname,email=email,subject=subject)
-    #         data.save()
-    #         return render(request,'alumni_app/contact_form_redirect.html')
+    if request.method == "POST":
+        if 'contact_form' in request.POST:
+            fname = request.POST["fname"]
+            lname = request.POST['lname']
+            email = request.POST['email']
+            subject = request.POST['subject']
+            data = Contact(fname=fname,lname=lname,email=email,subject=subject)
+            data.save()
+            return render(request,'alumni_app/contact_form_redirect.html')
 
     return render(request, 'alumni_app/index.html',{"list_slideshow":slideshow_list,"list_display_alumni":display_alumni_list})
 
