@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--
+
 {% extends "alumni_app/base.html" %}
 {% load static %}
 {% block base_body_block %}
@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" type="text/css" href="achievement.css">
 <script type="text/javascript" src="achievements.js"></script>
-<body>
+
   	<center style="margin-top: 15%;"><h3><b>Achievments</b></h3></center>
 
 	<center>
@@ -15,7 +15,8 @@
   		<ul class="list-group list-group-flush">
    			    <center>
                         <div class="card mb-3" style="max-width:60%;max-height:8%;text-align:left;border: 1px grey solid;">
-                            
+                            {% for i in achievements_obj %}
+
 
                             <div class="row no-gutters" style="border-bottom: 1px solid grey;">
                                 <div class="col-md-8">
@@ -62,13 +63,10 @@
 	                                $('#myModal_{{forloop.counter}}').hide();
                                 }
                             </script>
-
-                            {% endfor %}
+                          {% endfor %}
                         </div>
                     </center>
   		</ul>
 	</div>
 	</center>
-
-</body>
-</html>
+{% endblock %}
