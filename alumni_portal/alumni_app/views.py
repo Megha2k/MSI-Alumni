@@ -90,14 +90,16 @@ def notice(request):
 	notice_obj = reversed(notice_model.objects.all())
 	notice_list = {'notice_obj':notice_obj}
 
-    ContactUsView(request)
+	ContactUsView(request)
+
 	return render(request, 'alumni_app/notice.html',notice_list)
 
 def events(request):
 	events_obj = reversed(events_model.objects.all())
 	events_list = {'events_obj':events_obj}
 
-    ContactUsView(request)
+	ContactUsView(request)
+
 	return render(request, 'alumni_app/events.html',events_list)
 
 @login_required
@@ -122,6 +124,7 @@ def login_success(request):
         pass
 
     ContactUsView(request)
+
     return index(request)
 
 @login_required
@@ -295,17 +298,17 @@ def gallery(request):
 
 
 class AlumniListView(ListView):
-    
+
     model = display_alumni_model
     template_name = "alumni_app/display_alumni_list.html"
 
-    
+
     def get_context_data(self,**kwargs):
         display_alumni_obj = display_alumni_model.objects.all()
         display_alumni_list = {"list_display_alumni":display_alumni_obj}
         return display_alumni_list
-    
-    
+
+
 
 class AlumniDetailView(DetailView):
     model = display_alumni_model
