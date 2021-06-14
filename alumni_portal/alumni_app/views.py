@@ -23,83 +23,54 @@ def index(request):
 
     display_alumni_obj = display_alumni_model.objects.all()
     display_alumni_list = {"display_alumni_objs":display_alumni_obj}
-
-
-    ContactUsView(request)
-
-    # if request.method == "POST":
-    #     if 'contact_form' in request.POST:
-    #         fname = request.POST["fname"]
-    #         lname = request.POST['lname']
-    #         email = request.POST['email']
-    #         subject = request.POST['subject']
-    #         data = Contact(fname=fname,lname=lname,email=email,subject=subject)
-    #         data.save()
-    #         return render(request,'alumni_app/contact_form_redirect.html')
+ 
+ 
+    if request.method == "POST":
+        if 'contact_form' in request.POST:
+            fname = request.POST["fname"]
+            lname = request.POST['lname']
+            email = request.POST['email']
+            subject = request.POST['subject']
+            data = ContactUs(fname=fname,lname=lname,email=email,subject=subject)
+            data.save()
+            return render(request,'alumni_app/contact_form_redirect.html')
 
     return render(request, 'alumni_app/index.html',{"list_slideshow":slideshow_list,"list_display_alumni":display_alumni_list})
-
-
-def ContactUsView(request):
-    if 'contact_form' in request.POST:
-        fname = request.POST["fname"]
-        lname = request.POST['lname']
-        email = request.POST['email']
-        subject = request.POST['subject']
-        data = ContactUs(fname=fname,lname=lname,email=email,subject=subject)
-        data.save()
-    return render(request,'alumni_app/contact_form_redirect.html')
-
+ 
 
 def bca_placement(request):
     placement_companies_obj = placement_companies_model.objects.all().filter(bca="yes").order_by('name')
-    placement_companies_list = {'placement_companies_obj':placement_companies_obj}
-
-    ContactUsView(request)
+    placement_companies_list = {'placement_companies_obj':placement_companies_obj} 
     return render(request, 'alumni_app/bca_placement.html',placement_companies_list)
 
 def bba_placement(request):
     placement_companies_obj = placement_companies_model.objects.all().filter(bba="yes").order_by('name')
-    placement_companies_list = {'placement_companies_obj':placement_companies_obj}
-
-    ContactUsView(request)
+    placement_companies_list = {'placement_companies_obj':placement_companies_obj} 
     return render(request, 'alumni_app/bca_placement.html',placement_companies_list)
 
 def bed_placement(request):
     placement_companies_obj = placement_companies_model.objects.all().filter(bed="yes").order_by('name')
-    placement_companies_list = {'placement_companies_obj':placement_companies_obj}
-
-    ContactUsView(request)
+    placement_companies_list = {'placement_companies_obj':placement_companies_obj} 
     return render(request, 'alumni_app/bca_placement.html',placement_companies_list)
 
 def bcom_placement(request):
     placement_companies_obj = placement_companies_model.objects.all().filter(bcom="yes").order_by('name')
-    placement_companies_list = {'placement_companies_obj':placement_companies_obj}
-
-    ContactUsView(request)
+    placement_companies_list = {'placement_companies_obj':placement_companies_obj} 
     return render(request, 'alumni_app/bca_placement.html',placement_companies_list)
 
 def achievements(request):
     achievements_obj = achievements_model.objects.all().filter(checked="yes")
-    achievements_list = {"achievements_obj":achievements_obj}
-
-    ContactUsView(request)
+    achievements_list = {"achievements_obj":achievements_obj} 
     return render(request, 'alumni_app/achievements.html',achievements_list)
 
 def notice(request):
 	notice_obj = reversed(notice_model.objects.all())
-	notice_list = {'notice_obj':notice_obj}
-
-	ContactUsView(request)
-
+	notice_list = {'notice_obj':notice_obj} 
 	return render(request, 'alumni_app/notice.html',notice_list)
 
 def events(request):
 	events_obj = reversed(events_model.objects.all())
-	events_list = {'events_obj':events_obj}
-
-	ContactUsView(request)
-
+	events_list = {'events_obj':events_obj} 
 	return render(request, 'alumni_app/events.html',events_list)
 
 @login_required
@@ -122,9 +93,7 @@ def login_success(request):
         return msi_admin(request)
     else:
         pass
-
-    ContactUsView(request)
-
+ 
     return index(request)
 
 @login_required
@@ -137,9 +106,7 @@ def alumni(request):
         if form.is_valid():
             form.save(commit=True)
         return render(request, 'alumni_app/alumni.html',{'submit_achievements_form':form})
-
-    ContactUsView(request)
-
+ 
     return render(request, 'alumni_app/alumni.html',{'submit_achievements_form':form_submit_achievements})
 
 @login_required
@@ -290,9 +257,7 @@ def sendanemail(request):
 
 def gallery(request):
     slideshow_obj = slideshow_model.objects.all()
-    slideshow_list = {'slideshow_obj':slideshow_obj}
-
-    ContactUsView(request)
+    slideshow_list = {'slideshow_obj':slideshow_obj} 
     return render(request, 'alumni_app/gallery.html',{"list_slideshow":slideshow_list})
 
 
@@ -315,6 +280,5 @@ class AlumniDetailView(DetailView):
     template_name = "alumni_app/display_alumni_detail.html"
 
 
-def about(request):
-    ContactUsView(request)
+def about(request): 
     return render(request,'alumni_app/about.html')

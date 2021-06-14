@@ -178,11 +178,10 @@
 					     <div class="footer_blog footer_menu">
 						    <h3>Menus</h3>
 						    <ul>
-							  <li><a href="index.html">Home</a></li>
-							  <li><a href="about.html">About Us</a></li>
-							  <li><a href="services.html">Services</a></li>
-							  <li><a href="#">Blog</a></li>
-							  <li><a href="contact.html">Contact us</a></li>
+                              <li><a href="https://www.msijanakpuri.com/">MSI Official</a></li>
+							  <li><a href="{% url 'index' %}">Home</a></li>
+							  <li><a href="{% url 'alumni_app:about' %}">About Us</a></li>
+							  <li><a href="{% url 'homepage' %}#contact">Contact Form</a></li>
 							</ul>
 						 </div>
 					   </div>
@@ -190,43 +189,11 @@
 				 </div>
              <!-- Contact Form -->
         
-             <div class="col-xs-6 col-md-4">
-                <div class="card" id="cardFormTitle">
-                  <h5 class="card-header info-color white-text text-center py-4">
-                    <strong>Contact Form</strong>
-                  </h5>
-                  <div class="card-body" id="formContainerDiv">
-                    <form name="contact_form" id="contact_form" class="text-center" action="" method="POST">
-                        {% csrf_token %}
-                      <div class="md-form mt-3">
-                        <input type="text" name="fname" id="materialContactFormFirstName" class="form-control" placeholder="First Name" required="required">
-                      </div>
-                      <div class="md-form mt-3">
-                        <input type="text" name="lname" id="materialContactFormLastName" class="form-control" placeholder="Last Name">
-                      </div>
-                      <div class="md-form mt-3">
-                        <input type="text" name="email" id="materialContactEmail" class="form-control" placeholder="Email Id" required="required">
-                      </div>
-                      <div>
-                        <!-- <br>
-                        <br>
-                        <br>-->
-                            
-                      </div>
-                      <div class="md-form mt-3">
-                        <label for="subject" id = "subjectLabel">Subject:</label><br>
-                        <textarea class="form-control" id="subject" name="subject" placeholder="..write here...." cols=40 rows=4 required="required"></textarea>
-                      </div>
-                      <br>
-                      <div id="SubmitButton">
-                      <input type="submit" name="contact_form" value="Submit" class="btn" id = "contactSubmitButton">
-                      </div>
+            {% block contact_form %}
+            
 
-                    </form>
-                    
-                  </div>
-                </div>
-             </div>
+
+            {% endblock %}
              <!-- CONTACT FORM END -->
 
 
