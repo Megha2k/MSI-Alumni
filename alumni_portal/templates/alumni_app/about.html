@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% extends 'alumni_app/base.html' %}
+{% load static %}
+
+{% block base_body_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+
+    <div class="section dark_bg" id="about" style="padding-top:3%;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 text_align_center padding_0">
+                    <div class="full">
+                        <img id = "msi_logo" class="img-fluid mx-auto d-block" src="{% static 'images/msi_logo_no_bg.png' %}" alt="#"
+                       style="padding-top: 5px;">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 white_fonts layout_padding padding_left_right">
+                    <h3 class="small_heading">About Us</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+					The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
+					content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+					their default model..</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- section -->
+        <div class="section layout_padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="full">
+                            <div class="heading_main text_align_left">
+    						  
+    						   <div class="right">
+
+                                <h2><span class="theme_color">Our</span>TEAM</h2>
+    							</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br>
+
+                <div class="card-deck">
+                  <div class="card">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtneoMqep0gzJ0mrPbCrGfF_cl99UVFc6ceQ&usqp=CAU" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Kilua Zodyck</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img class="card-img-top" src="https://animemotivation.com/wp-content/uploads/2020/07/itachi-uchiha-anime-wallpaper.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Itachi Uchiha</h5>
+                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzeWm-MOFFErjXjWj7dgJsXdM6WZmgG2kWZw&usqp=CAU" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Nauto Uzumaki</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img class="card-img-top" src="http://4.bp.blogspot.com/-HuXeXjvAQKo/TuqJY4WKJ9I/AAAAAAAAAF8/DGI0_fwuHrs/s1600/Uchiha+Sasuke+1%2529.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Sasuke Uchiha</h5>
+                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                  
+                </div>
+                <br><br>
+
+              
+
+            </div>
+        </div>
+
+
+
+
+    	<!-- end section -->
+
+{% endblock %}

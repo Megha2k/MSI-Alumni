@@ -82,9 +82,9 @@ class bcom_students_model(models.Model):
 	file = models.FileField(upload_to='alumni', default="", blank=True)
 
 
-# class Contact(models.Model):
-# 	fname = models.CharField(max_length=25,blank=False)
-# 	lname = models.CharField(max_length=25)
-# 	email = models.EmailField(max_length=35,blank=False)
-# 	subject = models.TextField(max_length=250,blank=False)
+class ContactUs(models.Model):
+	fname = models.CharField(max_length=25,blank=False)
+	lname = models.CharField(max_length=25)
+	email = models.EmailField(max_length=35,blank=False)
+	subject = models.TextField(max_length=250,blank=False)
 
