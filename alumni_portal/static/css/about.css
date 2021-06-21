@@ -24,13 +24,45 @@
 
 .card {
   display: block; 
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     line-height: 1.42857143;
-    background-color: #fff;
+    background-image: radial-gradient(white, lightcoral );
     border-radius: 2px;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
     transition: box-shadow .25s; 
 }
 .card:hover {
   box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+  font-size: 50px;
+  width: 30px;
+  height: 30px;
+  padding-top: 7px;
+  text-align: center;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+  font-size: 50px;
+  width: 30px;
+  height: 30px;
+  padding-top: 7px;
+  text-align: center;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.right{
+  background-color: lightslategray;
+  width:81vw;
+  border-radius: 8px;
+  height: 10vh;
 }
